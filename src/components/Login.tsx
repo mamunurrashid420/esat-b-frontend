@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { toast } from 'sonner'
 import { useAuthStore } from '@/stores/authStore'
-import logoImage from '@/assets/alumni/logo.jpg'
+import logoImage from '@/assets/alumni/logo.png'
 import oldCoachingImage from '@/assets/alumni/old-coaching.jpeg'
 
 export function Login() {
@@ -72,16 +72,16 @@ export function Login() {
               <div className="w-20 h-20 rounded-full border-4 border-[#3B60C9] bg-white flex items-center justify-center mx-auto mb-4 overflow-hidden">
                 <img 
                   src={logoImage} 
-                  alt="JSSAA Logo" 
+                  alt="ESAT-B Logo" 
                   className="w-full h-full object-cover"
                 />
               </div>
             </div>
-            <h1 className="text-white text-3xl font-bold uppercase text-center mb-2">
-              JAHAPUR SECONDARY SCHOOL
+            <h1 className="text-white text-2xl font-bold uppercase text-center mb-2">
+              EX-STUDENTS ASSOCIATION OF
             </h1>
-            <p className="text-white text-lg uppercase text-center">
-              ALUMNI ASSOCIATION
+            <p className="text-white text-base uppercase text-center">
+              TEXTILE ENGINEERING COLLEGE, BARISHAL (ESAT-B)
             </p>
           </div>
         </div>

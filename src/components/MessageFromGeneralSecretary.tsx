@@ -10,7 +10,7 @@ export function MessageFromGeneralSecretary() {
 
         <div className="flex flex-col gap-6 md:gap-8 mt-4">
           <p className="text-sm md:text-base leading-relaxed md:leading-[26px]">
-            The Alumni Association serves as a strong and enduring bond among the ex-students of our beloved school. It provides a common platform where former students can reconnect with their roots while contributing meaningfully to the growth and development of both the school and its future generations.
+            The Alumni Association serves as a strong and enduring bond among the ex-students of our beloved Textile Engineering College, Barishal. It provides a common platform where former students can reconnect with their roots while contributing meaningfully to the growth and development of both the school and its future generations.
           </p>
           <p className="text-sm md:text-base leading-relaxed md:leading-[26px]">
             Our mission is to strengthen communication and collaboration among alumni, support current students in their academic and career development, and actively participate in the overall progress of the institution. To achieve these goals, the Alumni Association regularly organizes educational, professional, and social initiatives.
@@ -22,7 +22,7 @@ export function MessageFromGeneralSecretary() {
             Looking ahead, we aspire to build a more dynamic, inclusive, and impactful Alumni Association. Your valuable suggestions, cooperation, and participation will play a vital role in shaping our future endeavors.
           </p>
           <p className="text-sm md:text-base leading-relaxed md:leading-[26px]">
-            Let us move forward together to uphold the values, heritage, and reputation of our school.
+            Let us move forward together to uphold the values, heritage, and reputation of our college.
           </p>
           
           <div className="flex flex-col gap-2 mt-6">
@@ -36,7 +36,7 @@ export function MessageFromGeneralSecretary() {
               Secretary General
             </p>
             <p className="text-sm md:text-base font-semibold leading-relaxed" style={{ color: '#021E40' }}>
-              Jahapur Secondary School Alumni Association
+              Ex-Students Association Of Textile Engineering College, Barishal (ESAT-B)
             </p>
           </div>
         </div>

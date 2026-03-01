@@ -14,7 +14,7 @@ export function PrivacyPolicy() {
             Privacy Policy
           </p>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight" style={{ color: '#021E40' }}>
-            Jahapur Secondary School Alumni Association Privacy Policy
+            Ex-Students Association Of Textile Engineering College, Barishal (ESAT-B) Privacy Policy
           </h1>
           <p className="text-sm md:text-base mt-2" style={{ color: '#696868' }}>
             Effective Date: <span className="font-semibold">17TH January, 2026</span>
@@ -24,7 +24,7 @@ export function PrivacyPolicy() {
         {/* Introduction */}
         <div className="mt-4">
           <p className="text-sm md:text-base leading-relaxed md:leading-[26px]" style={{ color: '#696868' }}>
-            This Privacy Policy explains how Jahapur Secondary School Alumni Association collects, uses, stores, and protects personal information of its members, event participants, and other related individuals.
+            This Privacy Policy explains how Ex-Students Association Of Textile Engineering College, Barishal (ESAT-B) collects, uses, stores, and protects personal information of its members, event participants, and other related individuals.
           </p>
         </div>
 
@@ -144,13 +144,13 @@ export function PrivacyPolicy() {
           <div className="bg-gray-50 p-4 md:p-6 rounded-lg border border-gray-200 mt-2">
             <ul className="space-y-3 text-sm md:text-base leading-relaxed" style={{ color: '#696868' }}>
               <li>
-                <span className="font-semibold" style={{ color: '#021E40' }}>Email:</span> jssaa2025@gmail.com & info@jssalumni.org
+                <span className="font-semibold" style={{ color: '#021E40' }}>Email:</span> info@esatb.org
               </li>
               <li>
-                <span className="font-semibold" style={{ color: '#021E40' }}>Call (+88):</span> 01686787972, 01832133397 & 01707-431497
+                <span className="font-semibold" style={{ color: '#021E40' }}>Call:</span> +880 1712631461
               </li>
               <li>
-                <span className="font-semibold" style={{ color: '#021E40' }}>Office Address:</span> Jahapur Secondary School Campus, Jahapur, Babuganj, Barishal.
+                <span className="font-semibold" style={{ color: '#021E40' }}>Office Address:</span> Hossain Tower, 5th Floor, Sector #7, Uttara, Dhaka, Bangladesh
               </li>
             </ul>
           </div>

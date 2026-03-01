@@ -320,7 +320,7 @@ export function SelfDeclaration() {
             স্ব-ঘোষণাপত্র (Self-Declaration Form)
           </h1>
           <p className="text-sm text-black">
-            জাহাপুর মাধ্যমিক বিদ্যালয় অ্যালামনাই অ্যাসোসিয়েশন (JSSAA)
+            টেক্সটাইল ইঞ্জিনিয়ারিং কলেজ, বরিশাল প্রাক্তন ছাত্র সমিতি (ইএসএটি-বি)
           </p>
         </div>
 
@@ -353,7 +353,7 @@ export function SelfDeclaration() {
                 className="inline-flex min-w-[120px] max-w-[160px] h-7 px-2 py-0 text-sm text-black bg-transparent border-0 border-b-2 border-gray-400 rounded-none focus:border-gray-600 focus-visible:ring-0 focus-visible:outline-none shadow-none disabled:opacity-60 disabled:cursor-not-allowed disabled:bg-gray-100"
                 placeholder="সদস্য নম্বর"
               />
-              <span>জাহাপুর মাধ্যমিক বিদ্যালয় অ্যালামনাই অ্যাসোসিয়েশন (JSSAA) এর নির্বাহী কমিটির একজন সদস্য হিসেবে দায়িত্ব গ্রহণ করছি এবং সম্পূর্ণ সততার সাথে নিম্নোক্ত অঙ্গীকারসমূহ করছি:</span>
+              <span>টেক্সটাইল ইঞ্জিনিয়ারিং কলেজ, বরিশাল প্রাক্তন ছাত্র সমিতি (ইএসএটি-বি) এর নির্বাহী কমিটির একজন সদস্য হিসেবে দায়িত্ব গ্রহণ করছি এবং সম্পূর্ণ সততার সাথে নিম্নোক্ত অঙ্গীকারসমূহ করছি:</span>
             </p>
 
             <div className="space-y-3 ml-4">
@@ -513,10 +513,10 @@ export function SelfDeclaration() {
 
         {/* Footer */}
         <div className="mt-8 pt-6 border-t border-gray-200 text-xs text-black text-center">
-          <p>Address: Jahapur Secondary School Campus, Jahapur, Babuganj, Barishal.</p>
-          <p>Contact: 01686787972, 01832133397, 01707-431497</p>
-          <p>Web: www.jssalumni.org</p>
-          <p>Email: jssaa2025@gmail.com</p>
+          <p>Address: Hossain Tower, 5th Floor, Sector #7, Uttara, Dhaka, Bangladesh</p>
+          <p>Contact: +880 1712631461</p>
+          <p>Web: www.esatb.org</p>
+          <p>Email: info@esatb.org</p>
         </div>
       </div>
     </div>

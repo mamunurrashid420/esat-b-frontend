@@ -24,7 +24,7 @@ const coverageItems = [
 ]
 
 const eligibilityCriteria = [
-  'Must be a current student of Jahapur Secondary School/Ex-students (studying right now)/ current student of other school (Inter Union, Upazilla & Zilla)',
+  'Must be a current student of Textile Engineering College, Barishal/Ex-students (studying right now)/ current student of other institution (Inter Union, Upazilla & Zilla)',
   'Must have a satisfactory academic record',
   'Must demonstrate financial need',
   'Must show good moral character and discipline',
@@ -90,7 +90,7 @@ export function Scholarship() {
               className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight"
               style={{ color: '#021E40' }}
             >
-              JSSAA Scholarship Program
+              ESAT-B Scholarship Program
             </h1>
             <p 
               className="text-base md:text-lg lg:text-xl leading-relaxed max-w-3xl"
@@ -209,7 +209,7 @@ export function Scholarship() {
               className="text-base md:text-lg leading-relaxed md:leading-[26px]"
               style={{ color: '#696868' }}
             >
-              The Alumni Scholarship Program is an initiative of the Jahapur Secondary School Alumni Association aimed at supporting meritorious and financially deserving students. This program reflects the alumni community's commitment to giving back to their alma mater and contributing to the academic and personal development of the students including ex-students who are studying now.
+              The Alumni Scholarship Program is an initiative of the Ex-Students Association Of Textile Engineering College, Barishal (ESAT-B) aimed at supporting meritorious and financially deserving students. This program reflects the alumni community's commitment to giving back to their alma mater and contributing to the academic and personal development of the students including ex-students who are studying now.
             </p>
           </div>
         </div>

@@ -81,7 +81,7 @@ export async function generateCertificate(user: User): Promise<void> {
     // Configure PDF options
     const opt = {
       margin: 0,
-      filename: `JSSAA_Membership_Certificate_${user.member_id}.pdf`,
+      filename: `ESAT-B_Membership_Certificate_${user.member_id}.pdf`,
       image: { type: 'jpeg' as const, quality: 0.98 },
       html2canvas: {
         scale: 2,

@@ -69,7 +69,7 @@ export function HeroSection() {
             We Are Proud
           </h1>
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold mb-4 md:mb-6 px-4">
-            Students Of Jahapur Secondary School
+            Students Of Textile Engineering College, Barishal
           </h2>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-6 md:mb-8 leading-relaxed px-4">
             Join our vibrant alumni community and strengthen lifelong bonds. Through mentorship programs, networking events, and collaborative initiatives, we support each other's growth while contributing to the development of our school and community.

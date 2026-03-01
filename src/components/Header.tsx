@@ -9,7 +9,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import { useAuthStore } from '@/stores/authStore'
-import logoImage from '@/assets/alumni/logo.jpg'
+import logoImage from '@/assets/alumni/logo.png'
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -34,11 +34,6 @@ export function Header() {
     { label: 'Message from the President', href: '/about/president' },
     { label: 'Message from the Secretary General', href: '/about/secretary' },
     { label: 'Executive Members', href: '/about/executive-members' },
-    { label: 'Convening Committee', href: '/about/convening-committee' },
-    { label: 'Advisory Body', href: '/about/advisory-body' },
-    { label: 'Honor Board', href: '/about/honor-board' },
-    { label: 'Batch Representatives', href: '/about/batch-representatives' },
-    { label: 'Instructions to apply for membership', href: '/about/membership-instructions' },
   ]
 
   return (
@@ -105,15 +100,15 @@ export function Header() {
           <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full border-2 sm:border-3 md:border-4 border-[#3B60C9] bg-white flex items-center justify-center shrink-0 overflow-hidden">
             <img 
               src={logoImage} 
-              alt="JSSAA Logo" 
+              alt="ESAT-B Logo" 
               className="w-full h-full object-cover"
             />
           </div>
           <div className="block">
             <h1 className="text-[#3B60C9] font-bold text-xs sm:text-sm md:text-base lg:text-lg leading-tight">
-              JAHAPUR SECONDARY SCHOOL
+              EX-STUDENTS ASSOCIATION OF
             </h1>
-            <p className="text-[#3B60C9] text-[10px] sm:text-xs md:text-sm">ALUMNI ASSOCIATION</p>
+            <p className="text-[#3B60C9] text-[10px] sm:text-xs md:text-sm">TEXTILE ENGINEERING COLLEGE, BARISHAL (ESAT-B)</p>
           </div>
         </Link>
 

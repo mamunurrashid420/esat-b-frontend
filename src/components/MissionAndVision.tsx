@@ -18,7 +18,7 @@ export function MissionAndVision() {
               Vision
             </h2>
             <p className="text-sm md:text-base leading-relaxed md:leading-[26px]" style={{ color: '#696868' }}>
-              To contribute to the welfare of the school and alumni through building bridges, cooperation and joint development activities among the alumni of Jahapur Secondary School.
+              To contribute to the welfare of the school and alumni through building bridges, cooperation and joint development activities among the alumni of Textile Engineering College, Barishal.
             </p>
           </div>
 
@@ -32,7 +32,7 @@ export function MissionAndVision() {
                 a) To bring alumni members on the same platform and build fraternal relations and also play a role in enhancing the skills of interested members and creating employment opportunities.
               </p>
               <p className="text-sm md:text-base leading-relaxed md:leading-[26px]" style={{ color: '#696868' }}>
-                b) To make Jahapur Secondary School the best educational institution at the national level through the active participation of alumni and the joint efforts of all stakeholders.
+                b) To make Textile Engineering College, Barishal the best educational institution at the national level through the active participation of alumni and the joint efforts of all stakeholders.
               </p>
               <p className="text-sm md:text-base leading-relaxed md:leading-[26px]" style={{ color: '#696868' }}>
                 c) To build a strong network of alumni for social, professional and humanitarian support.

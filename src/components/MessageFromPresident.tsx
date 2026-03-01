@@ -10,7 +10,7 @@ export function MessageFromPresident() {
 
         <div className="flex flex-col gap-6 md:gap-8 mt-4">
           <p className="text-sm md:text-base leading-relaxed md:leading-[26px]">
-            It is my great honor and pleasure to welcome you to the Alumni Association of our esteemed School. This association stands as a testament to the enduring bond shared by our alumni and their lifelong connection to the institution that shaped their academic and personal journeys.
+            It is my great honor and pleasure to welcome you to the Ex-Students Association of our esteemed Textile Engineering College, Barishal. This association stands as a testament to the enduring bond shared by our alumni and their lifelong connection to the institution that shaped their academic and personal journeys.
           </p>
           <p className="text-sm md:text-base leading-relaxed md:leading-[26px]">
             The Alumni Association plays a vital role in strengthening relationships among former students, supporting current learners, and contributing to the continued growth and reputation of our institution. Through various academic, professional, and social initiatives, we strive to create opportunities for collaboration, mentorship, and meaningful engagement.
@@ -36,7 +36,7 @@ export function MessageFromPresident() {
               President
             </p>
             <p className="text-sm md:text-base font-semibold leading-relaxed" style={{ color: '#021E40' }}>
-              Jahapur Secondary School Alumni Association
+              Ex-Students Association Of Textile Engineering College, Barishal (ESAT-B)
             </p>
           </div>
         </div>

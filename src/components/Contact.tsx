@@ -30,7 +30,7 @@ export function Contact() {
                   Address
                 </h3>
                 <p className="text-sm md:text-base leading-relaxed" style={{ color: '#696868' }}>
-                  Jahapur Secondary School Campus (Building-2), Jahapur, Babuganj, Barishal
+                  Hossain Tower, 5th Floor, Sector #7, Uttara, Dhaka, Bangladesh
                 </p>
               </div>
             </div>
@@ -48,25 +48,11 @@ export function Contact() {
                 </h3>
                 <div className="flex flex-col gap-2">
                   <a 
-                    href="tel:01686787972" 
+                    href="tel:+8801712631461" 
                     className="text-sm md:text-base leading-relaxed hover:text-[#3B60C9] transition-colors" 
                     style={{ color: '#696868' }}
                   >
-                    01686787972
-                  </a>
-                  <a 
-                    href="tel:01832133397" 
-                    className="text-sm md:text-base leading-relaxed hover:text-[#3B60C9] transition-colors" 
-                    style={{ color: '#696868' }}
-                  >
-                    01832133397
-                  </a>
-                  <a 
-                    href="tel:01707431497" 
-                    className="text-sm md:text-base leading-relaxed hover:text-[#3B60C9] transition-colors" 
-                    style={{ color: '#696868' }}
-                  >
-                    01707431497
+                    +880 1712631461
                   </a>
                 </div>
               </div>
@@ -85,18 +71,11 @@ export function Contact() {
                 </h3>
                 <div className="flex flex-col gap-2">
                   <a 
-                    href="mailto:jssaa2025@gmail.com" 
+                    href="mailto:info@esatb.org" 
                     className="text-sm md:text-base leading-relaxed hover:text-[#3B60C9] transition-colors break-all" 
                     style={{ color: '#696868' }}
                   >
-                    jssaa2025@gmail.com
-                  </a>
-                  <a 
-                    href="mailto:info@jssalumni.org" 
-                    className="text-sm md:text-base leading-relaxed hover:text-[#3B60C9] transition-colors break-all" 
-                    style={{ color: '#696868' }}
-                  >
-                    info@jssalumni.org
+                    info@esatb.org
                   </a>
                 </div>
               </div>

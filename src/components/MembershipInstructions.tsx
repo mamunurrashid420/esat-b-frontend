@@ -16,13 +16,13 @@ export function MembershipInstructions() {
 
         <div className="flex flex-col gap-6 md:gap-8 mt-4">
           <p className="text-sm md:text-base leading-relaxed md:leading-[26px]" style={{ color: '#696868' }}>
-            Please read the following instructions carefully before filling out the JSSAA Membership Form-
+            Please read the following instructions carefully before filling out the ESAT-B Membership Form-
           </p>
 
           <div className="flex flex-col gap-4 md:gap-5">
             <div className="flex flex-col gap-2">
               <p className="text-sm md:text-base leading-relaxed md:leading-[26px]" style={{ color: '#696868' }}>
-                <strong>a)</strong> This form is only for the former students and eligible individuals who wish to become members of the Jahapur Secondary School Alumni Association (JSSAA).
+                <strong>a)</strong> This form is only for the former students and eligible individuals who wish to become members of the Ex-Students Association Of Textile Engineering College, Barishal (ESAT-B).
               </p>
             </div>
 
@@ -32,13 +32,13 @@ export function MembershipInstructions() {
               </p>
               <div className="ml-4 md:ml-6 mt-2 flex flex-col gap-2">
                 <p className="text-sm md:text-base leading-relaxed md:leading-[26px]" style={{ color: '#696868' }}>
-                  <strong>i)</strong> <strong>General Members:</strong> Former students who passed at least class eight/JSC or SSC/Matric from Jahapur Secondary School. Yearly subscription for general member is 500/- (five hundred) taka only.
+                  <strong>i)</strong> <strong>General Members:</strong> Former students who passed at least class eight/JSC or SSC/Matric from Textile Engineering College, Barishal. Yearly subscription for general member is 500/- (five hundred) taka only.
                 </p>
                 <p className="text-sm md:text-base leading-relaxed md:leading-[26px]" style={{ color: '#696868' }}>
-                  <strong>ii)</strong> <strong>Lifetime Members:</strong> Former students who passed at least class eight/JSC or SSC/Matric from Jahapur Secondary School. A one-time subscription for lifetime members is 10,000/- (ten thousand) taka.
+                  <strong>ii)</strong> <strong>Lifetime Members:</strong> Former students who passed at least class eight/JSC or SSC/Matric from Textile Engineering College, Barishal. A one-time subscription for lifetime members is 10,000/- (ten thousand) taka.
                 </p>
                 <p className="text-sm md:text-base leading-relaxed md:leading-[26px]" style={{ color: '#696868' }}>
-                  <strong>iii)</strong> <strong>Associate Members:</strong> Former students who were admitted to any class of Jahapur Secondary School. Yearly subscription for associate member is 300/- (three hundred) taka only.
+                  <strong>iii)</strong> <strong>Associate Members:</strong> Former students who were admitted to any class of Textile Engineering College, Barishal. Yearly subscription for associate member is 300/- (three hundred) taka only.
                 </p>
               </div>
             </div>
@@ -75,13 +75,13 @@ export function MembershipInstructions() {
 
             <div className="flex flex-col gap-2">
               <p className="text-sm md:text-base leading-relaxed md:leading-[26px]" style={{ color: '#696868' }}>
-                <strong>h)</strong> Submission of this form does not automatically confirm your membership. Membership will be effective only after verification and approval by the JSSAA authority.
+                <strong>h)</strong> Submission of this form does not automatically confirm your membership. Membership will be effective only after verification and approval by the ESAT-B authority.
               </p>
             </div>
 
             <div className="flex flex-col gap-2">
               <p className="text-sm md:text-base leading-relaxed md:leading-[26px]" style={{ color: '#696868' }}>
-                <strong>i)</strong> By submitting this form, you agree to abide by the constitution, rules, and regulations of JSSAA.
+                <strong>i)</strong> By submitting this form, you agree to abide by the constitution, rules, and regulations of ESAT-B.
               </p>
             </div>
 
@@ -116,13 +116,13 @@ export function MembershipInstructions() {
               সদস্যপদ ফরম পূরণের নির্দেশনাবলী
             </h2>
             <p className="text-sm md:text-base leading-relaxed md:leading-[26px] mb-6" style={{ color: '#696868' }}>
-              জাহাপুর মাধ্যমিক বিদ্যালয় অ্যালামনাই অ্যাসোসিয়েশন (JSSAA) এর সদস্যপদ ফরম পূরণ করার পূর্বে অনুগ্রহ করে নিচের নির্দেশনাগুলো মনোযোগসহকারে পড়ুন-
+              টেক্সটাইল ইঞ্জিনিয়ারিং কলেজ, বরিশাল প্রাক্তন ছাত্র সমিতি (ইএসএটি-বি) এর সদস্যপদ ফরম পূরণ করার পূর্বে অনুগ্রহ করে নিচের নির্দেশনাগুলো মনোযোগসহকারে পড়ুন-
             </p>
 
             <div className="flex flex-col gap-4 md:gap-5">
               <div className="flex flex-col gap-2">
                 <p className="text-sm md:text-base leading-relaxed md:leading-[26px]" style={{ color: '#696868' }}>
-                  <strong>ক)</strong> এই ফরমটি শুধুমাত্র যারা জাহাপুর মাধ্যমিক বিদ্যালয় অ্যালামনাই অ্যাসোসিয়েশন (JSSAA)-এর সদস্য হতে ইচ্ছুক এমন যোগ্য প্রাক্তন শিক্ষার্থীদের জন্য প্রযোজ্য।
+                  <strong>ক)</strong> এই ফরমটি শুধুমাত্র যারা টেক্সটাইল ইঞ্জিনিয়ারিং কলেজ, বরিশাল প্রাক্তন ছাত্র সমিতি (ইএসএটি-বি)-এর সদস্য হতে ইচ্ছুক এমন যোগ্য প্রাক্তন শিক্ষার্থীদের জন্য প্রযোজ্য।
                 </p>
               </div>
 
@@ -132,10 +132,10 @@ export function MembershipInstructions() {
                 </p>
                 <div className="ml-4 md:ml-6 mt-2 flex flex-col gap-2">
                   <p className="text-sm md:text-base leading-relaxed md:leading-[26px]" style={{ color: '#696868' }}>
-                    <strong>i)</strong> <strong>সাধারণ সদস্য (General Member):</strong> প্রাক্তন শিক্ষার্থীদের মধ্যে যারা জাহাপুর মাধ্যমিক বিদ্যালয় থেকে কমপক্ষে অষ্টম শ্রেণি/JSC অথবা SSC/ম্যাট্রিক পাশ করেছেন। সাধারণ সদস্যদের বার্ষিক চাঁদা ৫০০/- (পাঁচশত) টাকা মাত্র।
+                    <strong>i)</strong> <strong>সাধারণ সদস্য (General Member):</strong> প্রাক্তন শিক্ষার্থীদের মধ্যে যারা টেক্সটাইল ইঞ্জিনিয়ারিং কলেজ, বরিশাল থেকে কমপক্ষে অষ্টম শ্রেণি/JSC অথবা SSC/ম্যাট্রিক পাশ করেছেন। সাধারণ সদস্যদের বার্ষিক চাঁদা ৫০০/- (পাঁচশত) টাকা মাত্র।
                   </p>
                   <p className="text-sm md:text-base leading-relaxed md:leading-[26px]" style={{ color: '#696868' }}>
-                    <strong>ii)</strong> <strong>আজীবন সদস্য (Lifetime Member):</strong> প্রাক্তন শিক্ষার্থীদের মধ্যে যারা জাহাপুর মাধ্যমিক বিদ্যালয় থেকে কমপক্ষে অষ্টম শ্রেণি/JSC অথবা SSC/ম্যাট্রিক পাশ করেছেন। আজীবন সদস্যদের জন্য এককালীন চাঁদা ১০,০০০/- (দশ হাজার) টাকা মাত্র।
+                    <strong>ii)</strong> <strong>আজীবন সদস্য (Lifetime Member):</strong> প্রাক্তন শিক্ষার্থীদের মধ্যে যারা টেক্সটাইল ইঞ্জিনিয়ারিং কলেজ, বরিশাল থেকে কমপক্ষে অষ্টম শ্রেণি/JSC অথবা SSC/ম্যাট্রিক পাশ করেছেন। আজীবন সদস্যদের জন্য এককালীন চাঁদা ১০,০০০/- (দশ হাজার) টাকা মাত্র।
                   </p>
                   <p className="text-sm md:text-base leading-relaxed md:leading-[26px]" style={{ color: '#696868' }}>
                     <strong>iii)</strong> <strong>সহযোগী সদস্য (Associate Member):</strong> প্রাক্তন শিক্ষার্থী যারা জাহাপুর মাধ্যমিক বিদ্যালয়ের যেকোনো শ্রেণিতে অধ্যয়ন করেছেন। সহযোগী সদস্যদের বার্ষিক চাঁদা ৩০০/- (তিনশত) টাকা মাত্র।
@@ -175,7 +175,7 @@ export function MembershipInstructions() {
 
               <div className="flex flex-col gap-2">
                 <p className="text-sm md:text-base leading-relaxed md:leading-[26px]" style={{ color: '#696868' }}>
-                  <strong>জ)</strong> এই ফরম জমা দেওয়ার মাধ্যমে আবেদনকারী জাহাপুর মাধ্যমিক বিদ্যালয় অ্যালামনাই অ্যাসোসিয়েশন (JSSAA) এর গঠনতন্ত্র, নিয়মাবলি ও বিধি-বিধান মেনে চলতে সম্মত বলে বিবেচিত হবেন।
+                  <strong>জ)</strong> এই ফরম জমা দেওয়ার মাধ্যমে আবেদনকারী টেক্সটাইল ইঞ্জিনিয়ারিং কলেজ, বরিশাল প্রাক্তন ছাত্র সমিতি (ইএসএটি-বি) এর গঠনতন্ত্র, নিয়মাবলি ও বিধি-বিধান মেনে চলতে সম্মত বলে বিবেচিত হবেন।
                 </p>
               </div>
 

@@ -4,7 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { Link } from '@tanstack/react-router'
 import { ArrowLeft, Upload, Star, GraduationCap, CheckCircle2, AlertCircle } from 'lucide-react'
-import logoImage from '@/assets/alumni/logo.jpg'
+import logoImage from '@/assets/alumni/logo.png'
 import oldCoachingImage from '@/assets/alumni/old-coaching.jpeg'
 import { Input } from '@/components/ui/input'
 import {
@@ -33,7 +33,7 @@ const registrationSchema = z.object({
   }),
   jscYear: z.string().optional(),
   sscYear: z.string().optional(),
-  studentshipProofType: z.string().refine((val) => !val || ['jsc', 'eight', 'ssc', 'metric', 'marksheet', 'others'].includes(val), {
+  studentshipProofType: z.string().refine((val) => !val || val === 'studentship_certificate', {
     message: 'Please select a valid studentship proof type',
   }).optional(),
   highestEducationalDegree: z.string().optional(),
@@ -90,12 +90,12 @@ const registrationSchema = z.object({
       })
     }
   }
-  // For associate members: JSC year is required
+  // For associate members: year of passing is required
   if (data.membershipType === 'associate') {
     if (!data.jscYear || data.jscYear.trim() === '') {
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
-        message: 'JSC year of passing is required',
+        message: 'Year of passing is required',
         path: ['jscYear'],
       })
     }
@@ -136,7 +136,7 @@ export function Registration() {
       gender: undefined,
       jscYear: '',
       sscYear: '',
-      studentshipProofType: undefined,
+      studentshipProofType: 'studentship_certificate',
       highestEducationalDegree: '',
       presentAddress: '',
       permanentAddress: '',
@@ -419,23 +419,9 @@ export function Registration() {
     return 'L'
   }
 
-  const mapStudentshipProofType = (value: string): 'JSC' | 'EIGHT' | 'SSC' | 'METRIC_CERTIFICATE' | 'MARK_SHEET' | 'OTHERS' | undefined => {
-    switch (value.toLowerCase()) {
-      case 'jsc':
-        return 'JSC'
-      case 'eight':
-        return 'EIGHT'
-      case 'ssc':
-        return 'SSC'
-      case 'metric':
-        return 'METRIC_CERTIFICATE'
-      case 'marksheet':
-        return 'MARK_SHEET'
-      case 'others':
-        return 'OTHERS'
-      default:
-        return undefined
-    }
+  const mapStudentshipProofType = (value: string): 'METRIC_CERTIFICATE' | undefined => {
+    if (value === 'studentship_certificate') return 'METRIC_CERTIFICATE'
+    return undefined
   }
 
   const onSubmit = async (data: RegistrationFormData) => {
@@ -534,11 +520,9 @@ export function Registration() {
     if (data.sscYear) {
       apiFormData.append('ssc_year', data.sscYear)
     }
-    if (data.studentshipProofType) {
-      const mappedType = mapStudentshipProofType(data.studentshipProofType)
-      if (mappedType) {
-        apiFormData.append('studentship_proof_type', mappedType)
-      }
+    const studentshipType = mapStudentshipProofType(data.studentshipProofType || 'studentship_certificate')
+    if (studentshipType) {
+      apiFormData.append('studentship_proof_type', studentshipType)
     }
     if (data.highestEducationalDegree) {
       apiFormData.append('highest_educational_degree', data.highestEducationalDegree)
@@ -661,16 +645,16 @@ export function Registration() {
               <div className="w-20 h-20 rounded-full border-4 border-[#3B60C9] bg-white flex items-center justify-center mx-auto mb-4 overflow-hidden">
                 <img 
                   src={logoImage} 
-                  alt="JSSAA Logo" 
+                  alt="ESAT-B Logo" 
                   className="w-full h-full object-cover"
                 />
               </div>
             </div>
-            <h1 className="text-white text-3xl font-bold uppercase text-center mb-2">
-              JAHAPUR SECONDARY SCHOOL
+            <h1 className="text-white text-2xl font-bold uppercase text-center mb-2">
+              EX-STUDENTS ASSOCIATION OF
             </h1>
-            <p className="text-white text-lg uppercase text-center">
-              ALUMNI ASSOCIATION
+            <p className="text-white text-base uppercase text-center">
+              TEXTILE ENGINEERING COLLEGE, BARISHAL (ESAT-B)
             </p>
           </div>
         </div>
@@ -750,7 +734,7 @@ export function Registration() {
                 </p>
                 <div className="mb-4">
                   <Link 
-                    to="/about/membership-instructions" 
+                    to="/about" 
                     className="inline-flex items-center gap-2 text-sm text-[#3B60C9] hover:underline font-medium"
                   >
                     <span>📋</span>
@@ -933,12 +917,12 @@ export function Registration() {
                     </div>
                   </div>
 
-                  {/* 07. Year of Passing/Batch - JSC Year (Only for Associate Members) */}
+                  {/* 07. Year of Passing/Batch (Only for Associate Members) */}
                   {(membershipType === 'associate') && (
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-x-8">
                       <div className="flex flex-col min-h-[88px]">
                         <label htmlFor="jscYear" className="block text-sm font-medium mb-2">
-                          Year of Passing/Batch* - JSC Year: <span className="text-red-500">*</span>
+                          Year of Passing/Batch*: <span className="text-red-500">*</span>
                         </label>
                         <Controller
                           name="jscYear"
@@ -946,7 +930,7 @@ export function Registration() {
                           render={({ field }) => (
                             <Select value={field.value || ''} onValueChange={field.onChange}>
                               <SelectTrigger id="jscYear">
-                                <SelectValue placeholder="Select JSC year" />
+                                <SelectValue placeholder="Select year" />
                               </SelectTrigger>
                               <SelectContent>
                                 {Array.from({ length: 50 }, (_, i) => {
@@ -1019,18 +1003,14 @@ export function Registration() {
                       <Controller
                         name="studentshipProofType"
                         control={control}
+                        defaultValue="studentship_certificate"
                         render={({ field }) => (
-                          <Select value={field.value || ''} onValueChange={field.onChange}>
+                          <Select value={field.value || 'studentship_certificate'} onValueChange={field.onChange}>
                             <SelectTrigger id="studentshipProofType" className="mb-2">
                               <SelectValue placeholder="Select proof type" />
                             </SelectTrigger>
                             <SelectContent>
-                              <SelectItem value="jsc">JSC</SelectItem>
-                              <SelectItem value="eight">Eight</SelectItem>
-                              <SelectItem value="ssc">SSC</SelectItem>
-                              <SelectItem value="metric">Metric Certificate</SelectItem>
-                              <SelectItem value="marksheet">Marksheet</SelectItem>
-                              <SelectItem value="others">Others</SelectItem>
+                              <SelectItem value="studentship_certificate">Studentship Certificate</SelectItem>
                             </SelectContent>
                           </Select>
                         )}
@@ -1471,7 +1451,7 @@ export function Registration() {
                     )}
                     {paymentMethod === 'BKASH' && (
                        <div className="mt-2 p-3 bg-blue-50 border border-blue-200 rounded-md text-blue-800 text-sm font-medium">
-                          Send Money to 01686787972
+                          Send Money to 01773411528
                        </div>
                     )}
                   </div>

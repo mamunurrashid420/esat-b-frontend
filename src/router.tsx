@@ -21,11 +21,6 @@ import { Contact } from '@/components/Contact'
 import { Membership } from '@/components/Membership'
 import { ExecutiveMembers } from '@/components/ExecutiveMembers'
 import { Constitution } from '@/components/Constitution'
-import { ConveningCommittee } from '@/components/ConveningCommittee'
-import { AdvisoryBody } from '@/components/AdvisoryBody'
-import { HonorBoard } from '@/components/HonorBoard'
-import { BatchRepresentatives } from '@/components/BatchRepresentatives'
-import { MembershipInstructions } from '@/components/MembershipInstructions'
 import { Downloads } from '@/components/Downloads'
 import { EventsList } from '@/components/EventsList'
 import { EventDetail } from '@/components/EventDetail'
@@ -113,61 +108,6 @@ const executiveMembersRoute = createRoute({
   component: () => (
     <HomepageLayout>
       <ExecutiveMembers />
-    </HomepageLayout>
-  ),
-})
-
-// Convening Committee route
-const conveningCommitteeRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: '/about/convening-committee',
-  component: () => (
-    <HomepageLayout>
-      <ConveningCommittee />
-    </HomepageLayout>
-  ),
-})
-
-// Advisory Body route
-const advisoryBodyRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: '/about/advisory-body',
-  component: () => (
-    <HomepageLayout>
-      <AdvisoryBody />
-    </HomepageLayout>
-  ),
-})
-
-// Honor Board route
-const honorBoardRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: '/about/honor-board',
-  component: () => (
-    <HomepageLayout>
-      <HonorBoard />
-    </HomepageLayout>
-  ),
-})
-
-// Batch Representatives route
-const batchRepresentativesRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: '/about/batch-representatives',
-  component: () => (
-    <HomepageLayout>
-      <BatchRepresentatives />
-    </HomepageLayout>
-  ),
-})
-
-// Membership Instructions route
-const membershipInstructionsRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: '/about/membership-instructions',
-  component: () => (
-    <HomepageLayout>
-      <MembershipInstructions />
     </HomepageLayout>
   ),
 })
@@ -472,11 +412,6 @@ const routeTree = rootRoute.addChildren([
   historyRoute,
   missionVisionRoute,
   executiveMembersRoute,
-  conveningCommitteeRoute,
-  advisoryBodyRoute,
-  honorBoardRoute,
-  batchRepresentativesRoute,
-  membershipInstructionsRoute,
   constitutionRoute,
   scholarshipRoute,
   newsEventsRoute,

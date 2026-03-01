@@ -12,7 +12,6 @@ import { CommunitySection } from '@/components/ui/homepage/CommunitySection'
 import { HealthSection } from '@/components/ui/homepage/HealthSection'
 import { RecentNewsSection } from '@/components/ui/homepage/RecentNewsSection'
 import { UpcomingEventsSection } from '@/components/ui/homepage/UpcomingEventsSection'
-import { ProgramsSection } from '@/components/ui/homepage/ProgramsSection'
 import { apiClient } from '@/api/client'
 import type { HomepageResponse } from '@/types/api'
 
@@ -36,7 +35,6 @@ export function Homepage() {
       <AboutUsSection />
       <OurResponsibilitySection />
       <StatisticsSection stats={data?.stats ?? null} loading={loading} />
-      <ProgramsSection />
       <GallerySection photos={data?.gallery_photos.data ?? []} loading={loading} />
       <ScholarshipSection />
       <CommunitySection />

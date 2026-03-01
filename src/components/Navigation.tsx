@@ -4,7 +4,7 @@ import { LayoutDashboard, User, CreditCard, Settings, LogOut, Menu, X, FileText 
 import { cn } from '@/lib/utils'
 import { useAuthStore } from '@/stores/authStore'
 import { toast } from 'sonner'
-import logoImage from '@/assets/alumni/logo.jpg'
+import logoImage from '@/assets/alumni/logo.png'
 
 interface NavigationItem {
   icon: React.ComponentType<{ className?: string }>
@@ -71,16 +71,16 @@ export function Navigation() {
           <div className="w-12 h-12 rounded-full border-2 border-[#3B60C9] bg-white flex items-center justify-center shrink-0 overflow-hidden">
             <img 
               src={logoImage} 
-              alt="JSSAA Logo" 
+              alt="ESAT-B Logo" 
               className="w-full h-full object-cover"
             />
           </div>
           <div className="flex-1">
             <h2 className="text-xs font-semibold text-[#3B60C9] leading-tight">
-              JAHAPUR SECONDARY SCHOOL
+              EX-STUDENTS ASSOCIATION OF
             </h2>
             <h3 className="text-xs font-semibold text-[#3B60C9] leading-tight">
-              ALUMNI ASSOCIATION
+              TEXTILE ENGINEERING COLLEGE, BARISHAL (ESAT-B)
             </h3>
           </div>
         </Link>

@@ -1,5 +1,5 @@
 import type { User } from '@/types/api'
-import logoImage from '@/assets/alumni/logo.jpg'
+import logoImage from '@/assets/alumni/logo.png'
 import backgroundImage from '@/assets/alumni/gallery/1.jpg'
 
 interface MembershipCertificateProps {
@@ -146,7 +146,7 @@ export function MembershipCertificate({ user }: MembershipCertificateProps) {
             >
               <img
                 src={logoImage}
-                alt="JSSAA Logo"
+                alt="ESAT-B Logo"
                 style={{
                   width: '80px',
                   height: '80px',
@@ -169,7 +169,7 @@ export function MembershipCertificate({ user }: MembershipCertificateProps) {
                   lineHeight: '1.3',
                 }}
               >
-                JAHAPUR SECONDARY SCHOOL ALUMNI ASSOCIATION (JSSAA)
+                EX-STUDENTS ASSOCIATION OF TEXTILE ENGINEERING COLLEGE, BARISHAL (ESAT-B)
               </h1>
               
               {/* Association Name - Bengali */}
@@ -183,7 +183,7 @@ export function MembershipCertificate({ user }: MembershipCertificateProps) {
                   fontFamily: 'Arial, sans-serif',
                 }}
               >
-                জাহাপুর মাধ্যমিক বিদ্যালয় অ্যালামনাই অ্যাসোসিয়েশন
+                টেক্সটাইল ইঞ্জিনিয়ারিং কলেজ, বরিশাল প্রাক্তন ছাত্র সমিতি (ইএসএটি-বি)
               </h2>
             </div>
           </div>
@@ -264,7 +264,7 @@ export function MembershipCertificate({ user }: MembershipCertificateProps) {
               minWidth: '80px',
               paddingBottom: '2px',
               textAlign: 'center',
-            }}>{membershipTypeDisplay}</span> MEMBER of Jahapur Secondary School Alumni Association (JSSAA). This membership is valid till <span style={{ 
+            }}>{membershipTypeDisplay}</span> MEMBER of Ex-Students Association Of Textile Engineering College, Barishal (ESAT-B). This membership is valid till <span style={{ 
               display: 'inline-block', 
               borderBottom: '2px solid #000', 
               minWidth: '100px',
@@ -284,7 +284,7 @@ export function MembershipCertificate({ user }: MembershipCertificateProps) {
               fontFamily: 'Arial, sans-serif',
             }}
           >
-            The member is entitled to enjoy all rights and privileges as per the constitution of JSSAA and abide by its rules and regulations.
+            The member is entitled to enjoy all rights and privileges as per the constitution of ESAT-B and abide by its rules and regulations.
           </p>
         </div>
         
@@ -349,7 +349,7 @@ export function MembershipCertificate({ user }: MembershipCertificateProps) {
                   fontFamily: 'Arial, sans-serif',
                 }}
               >
-                Jahapur Secondary School Alumni Association (JSSAA)
+                Ex-Students Association Of Textile Engineering College, Barishal (ESAT-B)
               </p>
             </div>
             
@@ -393,7 +393,7 @@ export function MembershipCertificate({ user }: MembershipCertificateProps) {
                   fontFamily: 'Arial, sans-serif',
                 }}
               >
-                Jahapur Secondary School Alumni Association (JSSAA)
+                Ex-Students Association Of Textile Engineering College, Barishal (ESAT-B)
               </p>
             </div>
           </div>

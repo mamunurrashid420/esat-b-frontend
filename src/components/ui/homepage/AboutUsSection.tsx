@@ -16,13 +16,13 @@ const alumniImages = [event1, event2, event3, event4, gallery1, gallery2, galler
 
 const SHORT_TEXT_LENGTH = 280
 
-const fullText = `The Jahapur Secondary School Alumni Association (JSSAA) serves as the heart of our alumni community, connecting former students from different batches and backgrounds. The association is established with the vision of building strong bridges among the alumni, actively contributing to the welfare and overall development of both the school and its alumni through cooperation and collective initiatives.
+const fullText = `The Ex-Students Association Of Textile Engineering College, Barishal (ESAT-B) serves as the heart of our alumni community, connecting former students from different batches and backgrounds. The association is established with the vision of building strong bridges among the alumni, actively contributing to the welfare and overall development of both the college and its alumni through cooperation and collective initiatives.
 
-For decades, Jahapur Secondary School has shaped future leaders, professionals, and change-makers. We take immense pride in celebrating the achievements and contributions of our alumni across various fields. JSSAA aims to strengthen this proud legacy by organizing meaningful events, creating networking opportunities, and supporting initiatives that benefit both alumni and current students.
+Textile Engineering College, Barishal has shaped future leaders, professionals, and change-makers. We take immense pride in celebrating the achievements and contributions of our alumni across various fields. ESAT-B aims to strengthen this proud legacy by organizing meaningful events, creating networking opportunities, and supporting initiatives that benefit both alumni and current students.
 
-Through reunions, mentorship programs, educational support, and community outreach activities, the association strives to ensure that every member feels connected, valued, and empowered to make a positive difference. JSSAA provides a platform where lifelong bonds are nurtured, knowledge is shared and collaboration is encouraged for mutual growth.
+Through reunions, mentorship programs, educational support, and community outreach activities, the association strives to ensure that every member feels connected, valued, and empowered to make a positive difference. ESAT-B provides a platform where lifelong bonds are nurtured, knowledge is shared and collaboration is encouraged for mutual growth.
 
-Through this platform, alumni will maintain and nurture the bond among themselves and contribute to the overall development of the school & ex-students. JSSAA also deeply respects the contribution of the great persons who established & developed the school. Let's keep the spirit of Jahapur Secondary School alive and soar together toward new horizons.`
+Through this platform, alumni will maintain and nurture the bond among themselves and contribute to the overall development of the college & ex-students. ESAT-B also deeply respects the contribution of the great persons who established & developed the college. Let's keep the spirit of Textile Engineering College, Barishal alive and soar together toward new horizons.`
 
 export function AboutUsSection() {
   const [isExpanded, setIsExpanded] = useState(false)
@@ -77,7 +77,7 @@ export function AboutUsSection() {
                 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight md:leading-[56px] lg:leading-[72px]"
                 style={{ color: '#021E40' }}
               >
-                Jahapur Secondary School Alumni Association
+                Ex-Students Association Of Textile Engineering College, Barishal (ESAT-B)
               </h2>
             </div>
 

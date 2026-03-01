@@ -52,7 +52,7 @@ export function Dashboard() {
               <Award className="w-12 h-12 text-yellow-500" />
             }
             title="Membership certificate"
-            description="View and download your official membership certificate from JSSAA. This certificate verifies your membership status and can be used for official purposes."
+            description="View and download your official membership certificate from ESAT-B. This certificate verifies your membership status and can be used for official purposes."
             actionIcon="arrow"
             onAction={() => navigate({ to: '/certificate' })}
           />

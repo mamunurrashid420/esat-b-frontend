@@ -697,7 +697,7 @@ export function MakePayment({ showMemberId = true }: MakePaymentProps = {}) {
             {/* Show BKash number if BKash is selected */}
             {paymentMethod === 'BKASH' && (
                <div className="mt-2 p-3 bg-blue-50 border border-blue-200 rounded-md text-blue-800 text-sm font-medium">
-                  Send Money to 01686787972
+                  Send Money to 01773411528
                </div>
             )}
           </div>
