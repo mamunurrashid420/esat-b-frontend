@@ -6,7 +6,7 @@ export function MissionAndVision() {
           <p className="text-sm md:text-base font-semibold" style={{ color: '#999898' }}>
             Mission & Vision
           </p>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight" style={{ color: '#021E40' }}>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight" style={{ color: 'var(--color-dark-lighter)' }}>
             Mission & Vision
           </h1>
         </div>
@@ -14,7 +14,7 @@ export function MissionAndVision() {
         <div className="flex flex-col gap-6 md:gap-8 mt-4">
           {/* Vision Section */}
           <div className="flex flex-col gap-4">
-            <h2 className="text-2xl md:text-3xl font-semibold" style={{ color: '#021E40' }}>
+            <h2 className="text-2xl md:text-3xl font-semibold" style={{ color: 'var(--color-dark-lighter)' }}>
               Vision
             </h2>
             <p className="text-sm md:text-base leading-relaxed md:leading-[26px]" style={{ color: '#696868' }}>
@@ -24,7 +24,7 @@ export function MissionAndVision() {
 
           {/* Mission Section */}
           <div className="flex flex-col gap-4">
-            <h2 className="text-2xl md:text-3xl font-semibold" style={{ color: '#021E40' }}>
+            <h2 className="text-2xl md:text-3xl font-semibold" style={{ color: 'var(--color-dark-lighter)' }}>
               Mission
             </h2>
             <div className="flex flex-col gap-4">

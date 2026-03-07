@@ -93,7 +93,7 @@ export function RecentJobsSection({ jobs, loading }: RecentJobsSectionProps) {
       <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-[320px] box-border">
         <h2
           className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight md:leading-[56px] lg:leading-[72px] text-center"
-          style={{ color: '#021E40' }}
+          style={{ color: 'var(--color-dark-lighter)' }}
         >
           Job Opportunity
         </h2>

@@ -44,27 +44,29 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
   
-  /* Custom colors from globals.css */
-  --color-primary-custom: #3B60C9;
-  --color-primary-dark: #003C66;
-  --color-primary-darker: #000864;
-  --color-primary-darkest: #103499;
-  --color-primary-accent: #2348B2;
-  --color-primary-light: #5481FF;
-  --color-primary-lighter: #83A0F2;
-  --color-secondary-custom: #7166F5;
-  --color-secondary-light: #525FE1;
-  --color-secondary-lighter: #D0CCFF;
-  --color-dark: #231F40;
-  --color-dark-light: #161F37;
-  --color-dark-lighter: #021E40;
-  --color-dark-lightest: #211F38;
-  --color-success: #2ACA55;
-  --color-warning: #F86F03;
-  --color-warning-light: #F1D87C;
-  --color-warning-lighter: #EBB04B;
-  --color-warning-dark: #C6A02F;
-  --color-warning-darker: #E1A051;
+  /* Custom colors from globals.css (ESAT-B logo themed) */
+  --color-primary-custom: var(--color-primary);
+  --color-primary-dark: var(--color-primary-dark);
+  --color-primary-darker: var(--color-primary-darker);
+  --color-primary-darkest: var(--color-primary-darkest);
+  --color-primary-accent: var(--color-primary-accent);
+  --color-primary-light: var(--color-primary-light);
+  --color-primary-lighter: var(--color-primary-lighter);
+  --color-secondary-custom: var(--color-secondary);
+  --color-secondary-light: var(--color-secondary-light);
+  --color-secondary-lighter: var(--color-secondary-lighter);
+  --color-dark: var(--color-dark);
+  --color-dark-light: var(--color-dark-light);
+  --color-dark-lighter: var(--color-dark-lighter);
+  --color-dark-lightest: var(--color-dark-lightest);
+  --color-success: var(--color-success);
+  --color-warning: var(--color-warning);
+  --color-warning-light: var(--color-warning-light);
+  --color-warning-lighter: var(--color-warning-lighter);
+  --color-warning-dark: var(--color-warning-dark);
+  --color-warning-darker: var(--color-warning-darker);
+  --color-gold: var(--color-gold);
+  --color-gold-dark: var(--color-gold-dark);
 }
 
 :root {

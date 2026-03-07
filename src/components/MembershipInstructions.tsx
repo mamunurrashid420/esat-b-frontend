@@ -9,7 +9,7 @@ export function MembershipInstructions() {
           <p className="text-sm md:text-base font-semibold" style={{ color: '#999898' }}>
             Instructions to apply for membership
           </p>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight" style={{ color: '#021E40' }}>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight" style={{ color: 'var(--color-dark-lighter)' }}>
             Instructions to fill the Membership Form
           </h1>
         </div>
@@ -92,7 +92,7 @@ export function MembershipInstructions() {
             </div>
           </div>
 
-          <div className="mt-4 p-4 bg-gray-50 rounded-lg border-l-4 border-[#3B60C9]">
+          <div className="mt-4 p-4 bg-gray-50 rounded-lg border-l-4 border-[var(--color-primary)]">
             <p className="text-sm md:text-base leading-relaxed md:leading-[26px]" style={{ color: '#696868' }}>
               <strong>Note:</strong> Membership number will be sent by the admin panel of the registration to the contact number/e-mail of the alumni upon reviewing the provided information in the form and receipt of actual payments.
             </p>
@@ -103,7 +103,7 @@ export function MembershipInstructions() {
             <Link to="/register">
               <Button 
                 size="lg" 
-                className="bg-[#3B60C9] hover:bg-[#3B60C9]/90 text-white px-8 py-6 text-base md:text-lg font-semibold"
+                className="bg-[var(--color-primary)] hover:bg-[var(--color-primary)]/90 text-white px-8 py-6 text-base md:text-lg font-semibold"
               >
                 Apply for Membership Now
               </Button>
@@ -112,7 +112,7 @@ export function MembershipInstructions() {
 
           {/* Bengali Section */}
           <div className="mt-8 pt-8 border-t border-gray-200">
-            <h2 className="text-2xl md:text-3xl font-semibold mb-6" style={{ color: '#021E40' }}>
+            <h2 className="text-2xl md:text-3xl font-semibold mb-6" style={{ color: 'var(--color-dark-lighter)' }}>
               সদস্যপদ ফরম পূরণের নির্দেশনাবলী
             </h2>
             <p className="text-sm md:text-base leading-relaxed md:leading-[26px] mb-6" style={{ color: '#696868' }}>
@@ -192,7 +192,7 @@ export function MembershipInstructions() {
               </div>
             </div>
 
-            <div className="mt-4 p-4 bg-gray-50 rounded-lg border-l-4 border-[#3B60C9]">
+            <div className="mt-4 p-4 bg-gray-50 rounded-lg border-l-4 border-[var(--color-primary)]">
               <p className="text-sm md:text-base leading-relaxed md:leading-[26px]" style={{ color: '#696868' }}>
                 <strong>***</strong> ফরমে প্রদত্ত তথ্য যাচাই এবং প্রকৃত অর্থ পরিশোধ নিশ্চিত হওয়ার পর, নিবন্ধনের অ্যাডমিন প্যানেল থেকে আবেদনকারীর মোবাইল নম্বর বা ই-মেইল ঠিকানায় সদস্য নম্বর (Membership Number) প্রেরণ করা হবে।
               </p>
@@ -204,7 +204,7 @@ export function MembershipInstructions() {
             <Link to="/register">
               <Button 
                 size="lg" 
-                className="bg-[#3B60C9] hover:bg-[#3B60C9]/90 text-white px-8 py-6 text-base md:text-lg font-semibold"
+                className="bg-[var(--color-primary)] hover:bg-[var(--color-primary)]/90 text-white px-8 py-6 text-base md:text-lg font-semibold"
               >
                 এখনই সদস্যপদের জন্য আবেদন করুন
               </Button>

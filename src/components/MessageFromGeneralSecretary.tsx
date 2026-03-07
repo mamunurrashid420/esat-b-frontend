@@ -29,13 +29,13 @@ export function MessageFromGeneralSecretary() {
             <p className="text-sm md:text-base leading-relaxed" style={{ color: '#696868' }}>
               Warm regards,
             </p>
-            <p className="text-sm md:text-base font-semibold leading-relaxed" style={{ color: '#021E40' }}>
-              Md. Mostafijur Rahman Nanna
+            <p className="text-sm md:text-base font-semibold leading-relaxed" style={{ color: 'var(--color-dark-lighter)' }}>
+              Md. Mamunur Rashid
             </p>
-            <p className="text-sm md:text-base font-semibold leading-relaxed" style={{ color: '#021E40' }}>
+            <p className="text-sm md:text-base font-semibold leading-relaxed" style={{ color: 'var(--color-dark-lighter)' }}>
               Secretary General
             </p>
-            <p className="text-sm md:text-base font-semibold leading-relaxed" style={{ color: '#021E40' }}>
+            <p className="text-sm md:text-base font-semibold leading-relaxed" style={{ color: 'var(--color-dark-lighter)' }}>
               Ex-Students Association Of Textile Engineering College, Barishal (ESAT-B)
             </p>
           </div>

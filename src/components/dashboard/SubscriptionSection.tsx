@@ -12,7 +12,7 @@ export function SubscriptionSection() {
         <p className="text-sm text-black/70">Subscription Plan:</p>
         <a
           href="#"
-          className="text-sm text-[#3B60C9] hover:underline font-medium"
+          className="text-sm text-[var(--color-primary)] hover:underline font-medium"
         >
           Update Plan
         </a>
@@ -27,7 +27,7 @@ export function SubscriptionSection() {
           <h4 className="text-xl font-bold text-black mb-4">
             Lifetime Plan
           </h4>
-          <p className="text-2xl font-bold text-[#3B60C9] mb-6">
+          <p className="text-2xl font-bold text-[var(--color-primary)] mb-6">
             10000৳ /year
           </p>
 
@@ -46,7 +46,7 @@ export function SubscriptionSection() {
             ))}
           </ul>
 
-          <Button className="w-full bg-[#3B60C9] hover:bg-[#2348B2]">
+          <Button className="w-full bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)]">
             Current plan
           </Button>
         </div>

@@ -21,13 +21,13 @@ function getStatusLabel(type: string | null): string {
 function getStatusButtonColor(type: string | null): string {
   switch (type) {
     case 'GENERAL':
-      return 'bg-[#3B60C9] hover:bg-[#2d4ba3]'
+      return 'bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)]'
     case 'LIFETIME':
       return 'bg-green-600 hover:bg-green-700'
     case 'ASSOCIATE':
       return 'bg-purple-600 hover:bg-purple-700'
     default:
-      return 'bg-[#3B60C9] hover:bg-[#2d4ba3]'
+      return 'bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)]'
   }
 }
 
@@ -70,21 +70,21 @@ export function Membership() {
     <div className="container mx-auto px-4 py-8 md:py-12 lg:py-16 max-w-7xl">
       <div className="flex flex-col gap-6 mb-8">
         <div className="flex flex-col gap-2">
-          <p className="text-sm md:text-base font-semibold" style={{ color: '#021E40' }}>
+          <p className="text-sm md:text-base font-semibold" style={{ color: 'var(--color-dark-lighter)' }}>
             Membership
           </p>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight" style={{ color: '#021E40' }}>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight" style={{ color: 'var(--color-dark-lighter)' }}>
             Our Members
           </h1>
         </div>
-        <p className="text-sm md:text-base leading-relaxed md:leading-[26px]" style={{ color: '#021E40' }}>
+        <p className="text-sm md:text-base leading-relaxed md:leading-[26px]" style={{ color: 'var(--color-dark-lighter)' }}>
           Meet our distinguished alumni members who are making a difference in their respective fields and contributing to the growth of our community.
         </p>
       </div>
 
       {loading && (
         <div className="flex justify-center py-12">
-          <p className="text-[#021E40]">Loading members…</p>
+          <p className="text-[var(--color-dark-lighter)]">Loading members…</p>
         </div>
       )}
 
@@ -95,7 +95,7 @@ export function Membership() {
       )}
 
       {!loading && !error && members.length === 0 && (
-        <div className="rounded-lg border border-gray-200 bg-gray-50 p-8 text-center text-[#021E40]">
+        <div className="rounded-lg border border-gray-200 bg-gray-50 p-8 text-center text-[var(--color-dark-lighter)]">
           No members to display.
         </div>
       )}
@@ -131,19 +131,19 @@ export function Membership() {
                   )}
                 </div>
                 <div className="p-4 flex-1 flex flex-col">
-                  <h3 className="text-lg sm:text-xl font-bold text-[#021E40] mb-1 truncate">
+                  <h3 className="text-lg sm:text-xl font-bold text-[var(--color-dark-lighter)] mb-1 truncate">
                     {member.name}
                   </h3>
-                  <p className="text-sm sm:text-base text-[#021E40] mb-2">
+                  <p className="text-sm sm:text-base text-[var(--color-dark-lighter)] mb-2">
                     {member.designation ?? member.profession ?? '—'}
                   </p>
                   {member.institute_name && (
-                    <p className="text-sm text-[#021E40] mb-2">{member.institute_name}</p>
+                    <p className="text-sm text-[var(--color-dark-lighter)] mb-2">{member.institute_name}</p>
                   )}
                   <div className="space-y-1 mb-3">
-                    <p className="text-xs sm:text-sm text-[#021E40]">
-                      <span className="text-[#021E40]">Membership No :</span>{' '}
-                      <span className="text-[#021E40] font-medium">{member.member_id ?? '—'}</span>
+                    <p className="text-xs sm:text-sm text-[var(--color-dark-lighter)]">
+                      <span className="text-[var(--color-dark-lighter)]">Membership No :</span>{' '}
+                      <span className="text-[var(--color-dark-lighter)] font-medium">{member.member_id ?? '—'}</span>
                     </p>
                   </div>
                   <Button
@@ -158,7 +158,7 @@ export function Membership() {
 
           {meta && (meta.last_page > 1 || meta.total > PER_PAGE) && (
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-between gap-4">
-              <p className="text-sm text-[#021E40]">
+              <p className="text-sm text-[var(--color-dark-lighter)]">
                 Showing {(meta.current_page - 1) * meta.per_page + 1}–{Math.min(meta.current_page * meta.per_page, meta.total)} of {meta.total}
               </p>
               <div className="flex items-center gap-2">
@@ -170,7 +170,7 @@ export function Membership() {
                 >
                   Previous
                 </Button>
-                <span className="text-sm text-[#021E40] px-2">
+                <span className="text-sm text-[var(--color-dark-lighter)] px-2">
                   Page {meta.current_page} of {meta.last_page}
                 </span>
                 <Button

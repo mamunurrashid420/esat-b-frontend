@@ -78,7 +78,7 @@ export function ProfileCard() {
         <h3 className="text-base md:text-lg font-semibold text-black">Profile</h3>
         <Link
           to="/profile"
-          className="text-black/70 hover:text-[#3B60C9] transition-colors"
+          className="text-black/70 hover:text-[var(--color-primary)] transition-colors"
         >
           <Edit className="w-4 h-4 md:w-5 md:h-5" />
         </Link>
@@ -97,7 +97,7 @@ export function ProfileCard() {
           type="button"
           onClick={handlePhotoClick}
           disabled={isUploading}
-          className="relative w-20 h-20 md:w-24 md:h-24 rounded-full bg-gray-200 mx-auto mb-3 md:mb-4 flex items-center justify-center overflow-hidden focus:outline-none focus:ring-2 focus:ring-[#3B60C9] focus:ring-offset-2 disabled:opacity-60"
+          className="relative w-20 h-20 md:w-24 md:h-24 rounded-full bg-gray-200 mx-auto mb-3 md:mb-4 flex items-center justify-center overflow-hidden focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:ring-offset-2 disabled:opacity-60"
         >
           {photoUrl ? (
             <AuthenticatedImage

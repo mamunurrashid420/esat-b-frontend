@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { GetTogetherSection } from './GetTogetherSection'
 import type { Event } from '@/types/api'
-import oldCoachingImage from '../../../assets/alumni/old-coaching.jpeg'
 
 interface GetTogetherBannerProps {
   events: Event[]
@@ -18,7 +17,7 @@ export function GetTogetherBanner({ events, loading }: GetTogetherBannerProps) {
   }, [events.length, currentIndex])
 
   const currentEvent = events[currentIndex]
-  const coverPhoto = currentEvent?.cover_photo || oldCoachingImage
+  const coverPhoto = currentEvent?.cover_photo ?? null
   const imageAlt = currentEvent?.title || 'Alumni gathering'
 
   const goPrev = () => {
@@ -36,7 +35,7 @@ export function GetTogetherBanner({ events, loading }: GetTogetherBannerProps) {
     <section 
       className="relative z-20 w-full max-w-[1280px] mx-auto mt-0 sm:-mt-16 md:-mt-[140px] lg:-mt-[190px] px-4 md:px-6 lg:px-8"
       style={{
-        background: '#3B60C9',
+        background: 'var(--color-primary)',
         boxShadow: '0px 0px 20px rgba(29, 29, 29, 0.25)',
         borderRadius: '4px',
       }}
@@ -44,11 +43,19 @@ export function GetTogetherBanner({ events, loading }: GetTogetherBannerProps) {
       <div className="flex flex-col md:flex-row min-h-0 md:min-h-[280px] lg:min-h-[300px] md:max-h-[420px]">
         {/* Left Side - Event Cover Photo */}
         <div className="w-full md:w-[35%] h-[140px] sm:h-[160px] md:h-full md:max-h-[420px] overflow-hidden rounded-t-[4px] md:rounded-l-[4px] md:rounded-t-none shrink-0">
-          <img 
-            src={coverPhoto}
-            alt={imageAlt}
-            className="w-full h-full object-cover object-center"
-          />
+          {coverPhoto ? (
+            <img 
+              src={coverPhoto}
+              alt={imageAlt}
+              className="w-full h-full object-cover object-center"
+            />
+          ) : (
+            <div 
+              className="w-full h-full bg-cover bg-center"
+              style={{ background: 'linear-gradient(135deg, #1a365d 0%, var(--color-primary) 100%)' }}
+              aria-hidden
+            />
+          )}
         </div>
         
         {/* Right Side - Content */}

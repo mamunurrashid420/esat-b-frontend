@@ -212,7 +212,7 @@ export function Profile() {
   if (isLoading) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <Loader2 className="w-8 h-8 animate-spin text-[#3B60C9]" />
+        <Loader2 className="w-8 h-8 animate-spin text-[var(--color-primary)]" />
       </div>
     )
   }
@@ -237,7 +237,7 @@ export function Profile() {
 
       {/* User Summary Card */}
       <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
-        <div className="border-t-4 border-dashed border-[#3B60C9] pt-6">
+        <div className="border-t-4 border-dashed border-[var(--color-primary)] pt-6">
           <div className="flex flex-col md:flex-row gap-6">
             {/* Left Section - Profile Picture and Name */}
             <div className="flex flex-col md:flex-row items-center md:items-start gap-4">
@@ -254,7 +254,7 @@ export function Profile() {
                   type="button"
                   onClick={handlePhotoClick}
                   disabled={isUploadingPhoto}
-                  className="w-full h-full rounded-full bg-gray-200 flex items-center justify-center overflow-hidden focus:outline-none focus:ring-2 focus:ring-[#3B60C9] focus:ring-offset-2 disabled:opacity-60"
+                  className="w-full h-full rounded-full bg-gray-200 flex items-center justify-center overflow-hidden focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:ring-offset-2 disabled:opacity-60"
                 >
                   {profilePhotoUrl ? (
                     <AuthenticatedImage
@@ -268,7 +268,7 @@ export function Profile() {
                     </span>
                   )}
                 </button>
-                <span className="absolute -bottom-0.5 -right-0.5 w-8 h-8 bg-[#3B60C9] rounded-full flex items-center justify-center pointer-events-none shrink-0">
+                <span className="absolute -bottom-0.5 -right-0.5 w-8 h-8 bg-[var(--color-primary)] rounded-full flex items-center justify-center pointer-events-none shrink-0">
                   {isUploadingPhoto ? (
                     <Loader2 className="w-4 h-4 text-white animate-spin" />
                   ) : (
@@ -281,12 +281,12 @@ export function Profile() {
                   {formData.fullName || '—'}
                 </h2>
                 {formData.idNo && (
-                  <p className="text-sm text-[#3B60C9] font-medium mb-1">
+                  <p className="text-sm text-[var(--color-primary)] font-medium mb-1">
                     ID No: {formData.idNo}
                   </p>
                 )}
                 {formData.passingYear && (
-                  <p className="text-sm text-[#3B60C9] font-medium">
+                  <p className="text-sm text-[var(--color-primary)] font-medium">
                     Passing year: {formData.passingYear}
                   </p>
                 )}
@@ -338,7 +338,7 @@ export function Profile() {
           {!isEditing && (
             <button
               onClick={() => setIsEditing(true)}
-              className="text-black/70 hover:text-[#3B60C9] transition-colors p-2"
+              className="text-black/70 hover:text-[var(--color-primary)] transition-colors p-2"
             >
               <Edit className="w-5 h-5" />
             </button>
@@ -478,7 +478,7 @@ export function Profile() {
                     />
                     <Button
                       variant="link"
-                      className="text-[#3B60C9] text-sm px-0"
+                      className="text-[var(--color-primary)] text-sm px-0"
                       onClick={() => {
                         // TODO: Implement change password functionality
                       }}
@@ -491,7 +491,7 @@ export function Profile() {
                     <p className="text-sm text-black">{formData.password}</p>
                     <Button
                       variant="link"
-                      className="text-[#3B60C9] text-sm px-0"
+                      className="text-[var(--color-primary)] text-sm px-0"
                       onClick={() => {
                         // TODO: Implement change password functionality
                       }}
@@ -652,7 +652,7 @@ export function Profile() {
             <Button
               onClick={handleSave}
               disabled={isSaving}
-              className="bg-[#3B60C9] hover:bg-[#2348B2] text-white"
+              className="bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white"
             >
               {isSaving ? (
                 <Loader2 className="w-4 h-4 mr-2 animate-spin" />

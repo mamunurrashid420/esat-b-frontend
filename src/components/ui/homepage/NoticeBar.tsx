@@ -13,7 +13,7 @@ export function NoticeBar({ notices, loading }: NoticeBarProps) {
   }
 
   return (
-    <div className="sticky z-40 top-[100px] sm:top-[122px] lg:top-[132px] w-full bg-[#3B60C9] text-white py-2 md:py-2.5 overflow-hidden border-b border-[#2d4fa8] relative">
+    <div className="sticky z-40 top-[100px] sm:top-[122px] lg:top-[132px] w-full bg-[var(--color-primary)] text-white py-2 md:py-2.5 overflow-hidden border-b border-[var(--color-primary-dark)] relative">
       <div className="flex items-center overflow-hidden">
         <div className="shrink-0 flex items-center gap-2 pl-4 md:pl-6 pr-6 md:pr-8 z-10 bg-[#3B60C9]">
           <Megaphone className="w-4 h-4 md:w-5 md:h-5 shrink-0" aria-hidden />

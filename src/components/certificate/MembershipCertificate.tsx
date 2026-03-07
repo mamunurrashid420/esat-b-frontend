@@ -330,7 +330,7 @@ export function MembershipCertificate({ user }: MembershipCertificateProps) {
                   fontFamily: 'Arial, sans-serif',
                 }}
               >
-                Md. Mostafijur Rahman Nanna
+                Md. Mamunur Rashid
               </p>
               <p
                 style={{
@@ -374,7 +374,7 @@ export function MembershipCertificate({ user }: MembershipCertificateProps) {
                   fontFamily: 'Arial, sans-serif',
                 }}
               >
-                Major (Rtd.) Md. Rustom Ali
+                Touhid
               </p>
               <p
                 style={{

@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useNavigate } from '@tanstack/react-router'
-import { Award, FileText } from 'lucide-react'
+import { FileText } from 'lucide-react'
 import { WelcomeBanner } from './dashboard/WelcomeBanner'
 import { InfoCard } from './dashboard/InfoCard'
 import { NotificationsSection } from './dashboard/NotificationsSection'
@@ -47,15 +47,7 @@ export function Dashboard() {
 
         {/* Info Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-          <InfoCard
-            icon={
-              <Award className="w-12 h-12 text-yellow-500" />
-            }
-            title="Membership certificate"
-            description="View and download your official membership certificate from ESAT-B. This certificate verifies your membership status and can be used for official purposes."
-            actionIcon="arrow"
-            onAction={() => navigate({ to: '/certificate' })}
-          />
+          {/* Membership certificate disabled */}
           <InfoCard
             icon={
               <div className="relative">
@@ -66,7 +58,7 @@ export function Dashboard() {
               </div>
             }
             title="Payment history"
-            description="The App Is A Great Way To Stay Connected With Your Colleagues And Learn About What They're Working On. You Can Also Use The App"
+            description="View your payment history and manage subscriptions."
             actionIcon="arrow"
             onAction={() => navigate({ to: '/payment' })}
           />

@@ -5,7 +5,7 @@ import { z } from 'zod'
 import { Link } from '@tanstack/react-router'
 import { ArrowLeft, Upload, Star, GraduationCap, CheckCircle2, AlertCircle } from 'lucide-react'
 import logoImage from '@/assets/alumni/logo.png'
-import oldCoachingImage from '@/assets/alumni/old-coaching.jpeg'
+import { apiClient } from '@/api/client'
 import { Input } from '@/components/ui/input'
 import {
   Select,
@@ -112,7 +112,12 @@ export function Registration() {
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
   const [apiErrors, setApiErrors] = useState<FormErrors>({})
-  
+  const [backgroundImage, setBackgroundImage] = useState<string | null>(null)
+
+  useEffect(() => {
+    apiClient.getAuthPage().then((res) => setBackgroundImage(res.data.background_image)).catch(() => {})
+  }, [])
+
   const studentshipProofFileInputRef = useRef<HTMLInputElement>(null)
   const paymentReceiptFileInputRef = useRef<HTMLInputElement>(null)
   const photoFileInputRef = useRef<HTMLInputElement>(null)
@@ -621,7 +626,9 @@ export function Registration() {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url(${oldCoachingImage})`
+            ...(backgroundImage
+              ? { backgroundImage: `url(${backgroundImage})` }
+              : { background: 'linear-gradient(135deg, var(--color-primary) 0%, #1a365d 100%)' })
           }}
         >
           {/* Overlay */}
@@ -642,7 +649,7 @@ export function Registration() {
           {/* Logo and School Info */}
           <div className="flex flex-col items-center">
             <div className="bg-white rounded-lg p-6 shadow-lg mb-6">
-              <div className="w-20 h-20 rounded-full border-4 border-[#3B60C9] bg-white flex items-center justify-center mx-auto mb-4 overflow-hidden">
+              <div className="w-20 h-20 rounded-full border-4 border-[var(--color-primary)] bg-white flex items-center justify-center mx-auto mb-4 overflow-hidden">
                 <img 
                   src={logoImage} 
                   alt="ESAT-B Logo" 
@@ -710,7 +717,7 @@ export function Registration() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link to="/">
-                    <Button className="bg-[#3B60C9] hover:bg-[#2d4fa8] text-white px-6 py-2 rounded-md transition-colors">
+                    <Button className="bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white px-6 py-2 rounded-md transition-colors">
                       Go to Homepage
                     </Button>
                   </Link>
@@ -735,7 +742,7 @@ export function Registration() {
                 <div className="mb-4">
                   <Link 
                     to="/about" 
-                    className="inline-flex items-center gap-2 text-sm text-[#3B60C9] hover:underline font-medium"
+                    className="inline-flex items-center gap-2 text-sm text-[var(--color-primary)] hover:underline font-medium"
                   >
                     <span>📋</span>
                     <span>Read instructions before filling the form</span>
@@ -776,7 +783,7 @@ export function Registration() {
                                 value="general"
                                 checked={field.value === 'general'}
                                 onChange={(e) => handleMembershipTypeChange(e.target.value)}
-                                className="w-4 h-4 text-[#3B60C9] border-gray-300 focus:ring-[#3B60C9]"
+                                className="w-4 h-4 text-[var(--color-primary)] border-gray-300 focus:ring-[var(--color-primary)]"
                               />
                               <span className="text-sm text-black">General Member</span>
                             </label>
@@ -787,7 +794,7 @@ export function Registration() {
                                 value="lifetime"
                                 checked={field.value === 'lifetime'}
                                 onChange={(e) => handleMembershipTypeChange(e.target.value)}
-                                className="w-4 h-4 text-[#3B60C9] border-gray-300 focus:ring-[#3B60C9]"
+                                className="w-4 h-4 text-[var(--color-primary)] border-gray-300 focus:ring-[var(--color-primary)]"
                               />
                               <span className="text-sm text-black">Lifetime Member</span>
                             </label>
@@ -798,7 +805,7 @@ export function Registration() {
                                 value="associate"
                                 checked={field.value === 'associate'}
                                 onChange={(e) => handleMembershipTypeChange(e.target.value)}
-                                className="w-4 h-4 text-[#3B60C9] border-gray-300 focus:ring-[#3B60C9]"
+                                className="w-4 h-4 text-[var(--color-primary)] border-gray-300 focus:ring-[var(--color-primary)]"
                               />
                               <span className="text-sm text-black">Associate Member</span>
                             </label>
@@ -955,12 +962,12 @@ export function Registration() {
                     </div>
                   )}
 
-                  {/* 07. Year of Passing/Batch - SSC Year (Only for General and Lifetime Members) */}
+                  {/* 07. Year of Passing (Only for General and Lifetime Members) */}
                   {(membershipType === 'general' || membershipType === 'lifetime') && (
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-x-8">
                       <div className="flex flex-col min-h-[88px]">
                         <label htmlFor="sscYear" className="block text-sm font-medium mb-2">
-                          Year of Passing/Batch* - SSC Year: <span className="text-red-500">*</span>
+                          Year of Passing: <span className="text-red-500">*</span>
                         </label>
                         <Controller
                           name="sscYear"
@@ -968,7 +975,7 @@ export function Registration() {
                           render={({ field }) => (
                             <Select value={field.value || ''} onValueChange={field.onChange}>
                               <SelectTrigger id="sscYear">
-                                <SelectValue placeholder="Select SSC year" />
+                                <SelectValue placeholder="Select year" />
                               </SelectTrigger>
                               <SelectContent>
                                 {Array.from({ length: 100 }, (_, i) => {
@@ -1020,8 +1027,8 @@ export function Registration() {
                       )}
                       <div
                         className={cn(
-                          "border-2 border-dashed border-gray-300 rounded-md p-4 sm:p-6 text-center cursor-pointer hover:border-[#3B60C9] transition-colors",
-                          studentshipProofFile && "border-[#3B60C9] bg-blue-50"
+                          "border-2 border-dashed border-gray-300 rounded-md p-4 sm:p-6 text-center cursor-pointer hover:border-[var(--color-primary)] transition-colors",
+                          studentshipProofFile && "border-[var(--color-primary)] bg-blue-50"
                         )}
                         onDrop={handleStudentshipProofDrop}
                         onDragOver={(e) => e.preventDefault()}
@@ -1242,8 +1249,8 @@ export function Registration() {
                       </label>
                       <div
                         className={cn(
-                          "border-2 border-dashed border-gray-300 rounded-md p-4 sm:p-6 text-center cursor-pointer hover:border-[#3B60C9] transition-colors",
-                          photo && "border-[#3B60C9] bg-blue-50"
+                          "border-2 border-dashed border-gray-300 rounded-md p-4 sm:p-6 text-center cursor-pointer hover:border-[var(--color-primary)] transition-colors",
+                          photo && "border-[var(--color-primary)] bg-blue-50"
                         )}
                         onDrop={handlePhotoDrop}
                         onDragOver={(e) => e.preventDefault()}
@@ -1278,8 +1285,8 @@ export function Registration() {
                       </label>
                       <div
                         className={cn(
-                          "border-2 border-dashed border-gray-300 rounded-md p-4 sm:p-6 text-center cursor-pointer hover:border-[#3B60C9] transition-colors",
-                          signature && "border-[#3B60C9] bg-blue-50"
+                          "border-2 border-dashed border-gray-300 rounded-md p-4 sm:p-6 text-center cursor-pointer hover:border-[var(--color-primary)] transition-colors",
+                          signature && "border-[var(--color-primary)] bg-blue-50"
                         )}
                         onDrop={handleSignatureDrop}
                         onDragOver={(e) => e.preventDefault()}
@@ -1463,8 +1470,8 @@ export function Registration() {
                     </label>
                     <div
                       className={cn(
-                        "border-2 border-dashed border-gray-300 rounded-md p-4 sm:p-6 text-center cursor-pointer hover:border-[#3B60C9] transition-colors",
-                        paymentReceiptFile && "border-[#3B60C9] bg-blue-50"
+                        "border-2 border-dashed border-gray-300 rounded-md p-4 sm:p-6 text-center cursor-pointer hover:border-[var(--color-primary)] transition-colors",
+                        paymentReceiptFile && "border-[var(--color-primary)] bg-blue-50"
                       )}
                       onDrop={handlePaymentReceiptDrop}
                       onDragOver={(e) => e.preventDefault()}
@@ -1506,7 +1513,7 @@ export function Registration() {
                     <input
                       type="checkbox"
                       {...register('termsAccepted')}
-                      className="mt-1 w-4 h-4 text-[#3B60C9] border-gray-300 rounded focus:ring-[#3B60C9]"
+                      className="mt-1 w-4 h-4 text-[var(--color-primary)] border-gray-300 rounded focus:ring-[var(--color-primary)]"
                     />
                     <span className="text-sm text-black">
                       Above information is correct. I must abide by the rules & regulations of this association. I will not demand my paid amount as entry fee of membership even after cancellation/rejection/withdrawal of membership. I agree to the above terms and conditions.
@@ -1521,14 +1528,14 @@ export function Registration() {
                 <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-6 border-t border-gray-200">
                   <p className="text-sm text-black">
                     Already have an account?{' '}
-                    <Link to="/login" className="text-[#3B60C9] hover:underline font-medium">
+                    <Link to="/login" className="text-[var(--color-primary)] hover:underline font-medium">
                       Login
                     </Link>
                   </p>
                   <Button
                     type="submit"
                     disabled={loading}
-                    className="bg-[#3B60C9] hover:bg-[#2d4fa8] text-white px-8 py-2 rounded-md transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white px-8 py-2 rounded-md transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {loading ? 'Submitting...' : 'Create account'}
                   </Button>

@@ -39,6 +39,10 @@ const AUTH_TOKEN_COOKIE = 'auth_token';
 /** Cookie key used by Zustand persist for auth store (must stay in sync with authStore persist name) */
 const AUTH_STORAGE_COOKIE = 'auth-storage';
 
+/** Same base URL as API requests – use for image URLs from API (e.g. About section). */
+export const getApiBaseUrl = (): string =>
+  (import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000').replace(/\/$/, '');
+
 class ApiClient {
   private client: AxiosInstance;
   private baseURL: string;
@@ -456,6 +460,14 @@ class ApiClient {
   /** Combined homepage data (public). Single request for notices, events, gallery, jobs, news, stats. */
   async getHomepage(): Promise<HomepageResponse> {
     const response = await this.client.get<HomepageResponse>(endpoints.homepage);
+    return response.data;
+  }
+
+  /** Auth page background image for login/registration (public). */
+  async getAuthPage(): Promise<{ data: { background_image: string | null } }> {
+    const response = await this.client.get<{ data: { background_image: string | null } }>(
+      endpoints.authPage
+    );
     return response.data;
   }
 

@@ -62,7 +62,7 @@ export function Payment() {
 
         {/* Make Payment Button */}
         <Link to="/make-payment">
-          <Button className="bg-[#3B60C9] hover:bg-[#3B60C9]/90 text-white">
+          <Button className="bg-[var(--color-primary)] hover:bg-[var(--color-primary)]/90 text-white">
             Make payment
           </Button>
         </Link>
@@ -79,7 +79,7 @@ export function Payment() {
       <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
         {isLoading ? (
           <div className="px-6 py-8 text-center">
-            <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-[#3B60C9]"></div>
+            <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-[var(--color-primary)]"></div>
             <p className="mt-4 text-sm text-gray-600">Loading payments...</p>
           </div>
         ) : (

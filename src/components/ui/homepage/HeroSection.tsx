@@ -77,7 +77,8 @@ export function HeroSection() {
           <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center px-4">
             <Link to="/about/mission-vision" className="w-full sm:w-auto">
               <Button 
-                className="bg-[#3B60C9] hover:bg-[#2d4fa8] text-white px-6 md:px-8 py-4 md:py-6 text-base md:text-lg w-full sm:w-auto"
+                className="text-white px-6 md:px-8 py-4 md:py-6 text-base md:text-lg w-full sm:w-auto hover:opacity-95"
+                style={{ backgroundColor: 'var(--color-gold)' }}
               >
                 Our Mission
               </Button>

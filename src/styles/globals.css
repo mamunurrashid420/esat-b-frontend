@@ -1,21 +1,31 @@
 /* Global Styles - CSS Variables Only */
 
 :root {
-  /* ===== Colors ===== */
+  /* ===== Colors (ESAT-B Logo Inspired - Eye-catching) ===== */
   
-  /* Primary Blues */
-  --color-primary: #3B60C9;
-  --color-primary-dark: #003C66;
-  --color-primary-darker: #000864;
-  --color-primary-darkest: #103499;
-  --color-primary-accent: #2348B2;
-  --color-primary-light: #5481FF;
-  --color-primary-lighter: #83A0F2;
+  /* Primary - Blue from logo gear */
+  --color-primary: #1E5AA7;
+  --color-primary-dark: #164A8A;
+  --color-primary-darker: #0D3A6E;
+  --color-primary-darkest: #0C2340;
+  --color-primary-accent: #2563EB;
+  --color-primary-light: #3B82F6;
+  --color-primary-lighter: #93C5FD;
   
-  /* Secondary Colors */
-  --color-secondary: #7166F5;
-  --color-secondary-light: #525FE1;
-  --color-secondary-lighter: #D0CCFF;
+  /* Brand Gold/Mustard from logo - CTAs & top bar */
+  --color-gold: #D4A017;
+  --color-gold-dark: #B8860B;
+  --color-gold-light: #E5A319;
+  --color-gold-lighter: #F4C430;
+  
+  /* Accent - Pink/Coral from logo */
+  --color-accent-pink: #E8B4B8;
+  --color-accent-coral: #E8A598;
+  
+  /* Secondary / UI */
+  --color-secondary: #1E5AA7;
+  --color-secondary-light: #3B82F6;
+  --color-secondary-lighter: #BFDBFE;
   
   /* Neutral Colors */
   --color-white: #FFFFFF;
@@ -24,8 +34,8 @@
   --color-black-lighter: #0A0A0A;
   
   /* Grays */
-  --color-gray-50: #F5F7F9;
-  --color-gray-100: #F5F5F5;
+  --color-gray-50: #F8FAFC;
+  --color-gray-100: #F1F5F9;
   --color-gray-200: #F9F9F9;
   --color-gray-300: #F2F2F2;
   --color-gray-400: #EFEFEF;
@@ -42,19 +52,20 @@
   --color-gray-1500: #666666;
   --color-gray-1600: #6F6B80;
   
-  /* Dark Backgrounds */
-  --color-dark: #231F40;
-  --color-dark-light: #161F37;
-  --color-dark-lighter: #021E40;
-  --color-dark-lightest: #211F38;
+  /* Dark Backgrounds - Navy (logo feel) */
+  --color-dark: #0C2340;
+  --color-dark-light: #0F172A;
+  --color-dark-lighter: #1E293B;
+  --color-dark-lightest: #334155;
   
   /* Accent Colors */
-  --color-success: #2ACA55;
-  --color-warning: #F86F03;
-  --color-warning-light: #F1D87C;
-  --color-warning-lighter: #EBB04B;
-  --color-warning-dark: #C6A02F;
-  --color-warning-darker: #E1A051;
+  --color-success: #16A34A;
+  --color-warning: #D4A017;
+  --color-warning-light: #FDE68A;
+  --color-warning-lighter: #FEF3C7;
+  --color-warning-dark: #B8860B;
+  --color-warning-darker: #92400E;
+  --color-red: #C41E3A;
   
   /* ===== Typography ===== */
   
@@ -183,6 +194,31 @@
   box-sizing: border-box;
 }
 
+/* Brand utility classes (use var() for consistency) */
+.text-brand { color: var(--color-primary); }
+.bg-brand { background-color: var(--color-primary); }
+.border-brand { border-color: var(--color-primary); }
+.text-heading-dark { color: var(--color-dark-lighter); }
+
+/* Subtle animated body background (eye-catching, brand colors) */
+@keyframes body-gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes page-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -190,9 +226,25 @@ body {
   font-size: var(--font-size-base);
   line-height: var(--line-height-relaxed);
   color: var(--color-black-light);
-  background-color: var(--color-white);
+  /* Soft gradient: off-white → hint of primary → hint of gold (large so it’s subtle) */
+  background: linear-gradient(
+    135deg,
+    #fafbfc 0%,
+    #f5f8fc 18%,
+    #fdfbf5 45%,
+    #f8f9fc 72%,
+    #fafbfc 100%
+  );
+  background-size: 400% 400%;
+  animation: body-gradient-shift 18s ease infinite;
+  min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Optional: smooth fade-in for main app content */
+#root {
+  animation: page-fade-in 0.5s ease-out;
 }
 
 /* Hide scrollbar for carousels / horizontal scroll areas */

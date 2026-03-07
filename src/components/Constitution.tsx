@@ -122,7 +122,7 @@ export function Constitution() {
                   <a
                     href={selectedItem.pdf}
                     download={`${selectedItem.label}.pdf`}
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-[#3B60C9] text-white rounded-lg hover:bg-[#2d4ba3] transition-colors"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-[var(--color-primary)] text-white rounded-lg hover:bg-[var(--color-primary-dark)] transition-colors"
                   >
                     <svg
                       className="w-5 h-5"

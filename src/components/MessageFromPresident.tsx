@@ -30,7 +30,7 @@ export function MessageFromPresident() {
               With best wishes,
             </p>
             <p className="text-sm md:text-base font-semibold leading-relaxed" style={{ color: '#021E40' }}>
-              Major (Rtd.) Md. Rustom Ali
+              Touhid
             </p>
             <p className="text-sm md:text-base font-semibold leading-relaxed" style={{ color: '#021E40' }}>
               President

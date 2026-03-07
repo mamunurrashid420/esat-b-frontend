@@ -46,6 +46,7 @@ export const endpoints = {
 
   // Homepage (public) – combined data for homepage
   homepage: `${API_BASE}/homepage`,
+  authPage: `${API_BASE}/auth-page`,
   stats: `${API_BASE}/stats`,
   galleryPhotos: `${API_BASE}/gallery-photos`,
   notices: `${API_BASE}/notices`,

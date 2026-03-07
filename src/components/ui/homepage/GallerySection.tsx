@@ -70,7 +70,7 @@ export function GallerySection({ photos, loading }: GallerySectionProps) {
         <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-[336px] box-border">
           <h2
             className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight md:leading-[56px] lg:leading-[72px] text-center"
-            style={{ color: '#021E40' }}
+            style={{ color: 'var(--color-dark-lighter)' }}
           >
             Gallery
           </h2>
@@ -88,7 +88,7 @@ export function GallerySection({ photos, loading }: GallerySectionProps) {
         <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-[336px] box-border">
           <h2
             className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight md:leading-[56px] lg:leading-[72px] text-center"
-            style={{ color: '#021E40' }}
+            style={{ color: 'var(--color-dark-lighter)' }}
           >
             Gallery
           </h2>
@@ -105,7 +105,7 @@ export function GallerySection({ photos, loading }: GallerySectionProps) {
       <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-[336px] box-border">
         <h2
           className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight md:leading-[56px] lg:leading-[72px] text-center"
-          style={{ color: '#021E40' }}
+          style={{ color: 'var(--color-dark-lighter)' }}
         >
           Gallery
         </h2>
@@ -121,8 +121,8 @@ export function GallerySection({ photos, loading }: GallerySectionProps) {
               onClick={() => setActiveFilter(filter)}
               className="px-3 md:px-5 py-2 rounded-md text-sm md:text-base font-medium transition-colors"
               style={{
-                background: activeFilter === filter ? '#3B60C9' : 'transparent',
-                color: activeFilter === filter ? '#FFFFFF' : '#3B60C9',
+                background: activeFilter === filter ? 'var(--color-primary)' : 'transparent',
+                color: activeFilter === filter ? '#FFFFFF' : 'var(--color-primary)',
                 boxShadow: activeFilter === filter ? '0px 0px 16px rgba(42, 42, 42, 0.25)' : 'none',
               }}
             >

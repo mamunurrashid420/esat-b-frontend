@@ -4,7 +4,7 @@ import logoImage from '@/assets/alumni/logo.png'
 
 export function Footer() {
   return (
-    <footer className="bg-[#231F40] flex flex-col w-full">
+    <footer className="flex flex-col w-full" style={{ backgroundColor: 'var(--color-dark)' }}>
       <div className="grid grid-cols-4 gap-[44px] py-[68px] px-[320px] pb-[44px] flex-1 max-[1920px]:gap-8 max-[1920px]:py-16 max-[1920px]:px-8 max-[1536px]:px-6 max-[1280px]:grid-cols-2 max-[1280px]:gap-8 max-[1280px]:py-14 max-[1024px]:gap-6 max-[1024px]:py-12 max-[1024px]:px-5 max-md:grid-cols-1 max-md:gap-6 max-md:py-10 max-md:px-4 max-[640px]:py-8 max-[640px]:px-3 max-[640px]:gap-5">
         {/* Column 1: Brand and Social Media */}
         <div className="flex flex-col">
@@ -135,8 +135,8 @@ export function Footer() {
       </div>
 
       {/* Copyright Bar */}
-      <div className="bg-[#3B60C9] py-4 px-[320px] text-center w-full max-[1920px]:px-8 max-[1536px]:px-6 max-[1280px]:px-6 max-md:py-3 max-md:px-4 max-md:text-sm max-[640px]:py-2 max-[640px]:px-3">
-        <p className="font-['Roboto'] font-normal text-base leading-6 text-white m-0 max-md:text-sm max-[640px]:text-xs wrap-break-word">Copyright 2026 | Design & Development by E3 Innovations Ltd.</p>
+      <div className="py-4 px-[320px] text-center w-full max-[1920px]:px-8 max-[1536px]:px-6 max-[1280px]:px-6 max-md:py-3 max-md:px-4 max-md:text-sm max-[640px]:py-2 max-[640px]:px-3" style={{ backgroundColor: 'var(--color-gold)' }}>
+        <p className="font-['Roboto'] font-normal text-base leading-6 m-0 max-md:text-sm max-[640px]:text-xs wrap-break-word" style={{ color: 'var(--color-dark)' }}>Copyright 2026 | Design & Development by E3 Innovations Ltd.</p>
       </div>
     </footer>
   )

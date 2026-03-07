@@ -1,20 +1,14 @@
-import { useMemo, useState } from 'react'
-import { Button } from '@/components/ui/button'
-import event1 from '@/assets/alumni/event/1.jpg'
-import event2 from '@/assets/alumni/event/2.jpg'
-import event3 from '@/assets/alumni/event/3.jpeg'
-import event4 from '@/assets/alumni/event/4.jpeg'
-import gallery1 from '@/assets/alumni/gallery/1.jpg'
-import gallery2 from '@/assets/alumni/gallery/2.jpg'
-import gallery3 from '@/assets/alumni/gallery/3.jpeg'
-import gallery4 from '@/assets/alumni/gallery/4.jpeg'
-import galleryBatch2005 from '@/assets/alumni/gallery/Batch-2005.jpg'
-import oldCoaching from '@/assets/alumni/old-coaching.jpeg'
-
-// Array of all available images (excluding logo)
-const alumniImages = [event1, event2, event3, event4, gallery1, gallery2, gallery3, gallery4, galleryBatch2005, oldCoaching]
+import { useEffect, useState } from 'react'
+import { getApiBaseUrl } from '@/api/client'
 
 const SHORT_TEXT_LENGTH = 280
+
+export interface AboutUsSectionProps {
+  /** Main image URL (from API). When set, overrides random static image. */
+  mainImageUrl?: string | null;
+  /** Overlapping image URL (from API). When set, overrides random static image. */
+  overlappingImageUrl?: string | null;
+}
 
 const fullText = `The Ex-Students Association Of Textile Engineering College, Barishal (ESAT-B) serves as the heart of our alumni community, connecting former students from different batches and backgrounds. The association is established with the vision of building strong bridges among the alumni, actively contributing to the welfare and overall development of both the college and its alumni through cooperation and collective initiatives.
 
@@ -24,10 +18,30 @@ Through reunions, mentorship programs, educational support, and community outrea
 
 Through this platform, alumni will maintain and nurture the bond among themselves and contribute to the overall development of the college & ex-students. ESAT-B also deeply respects the contribution of the great persons who established & developed the college. Let's keep the spirit of Textile Engineering College, Barishal alive and soar together toward new horizons.`
 
-export function AboutUsSection() {
+/** Build full image URL – uses same API base as homepage fetch so images load. */
+function getImageUrl(url: string | null | undefined): string | undefined {
+  if (!url || typeof url !== 'string') return undefined
+  if (url.startsWith('http://') || url.startsWith('https://')) return url
+  const apiBase = getApiBaseUrl()
+  return apiBase ? `${apiBase}${url.startsWith('/') ? url : `/${url}`}` : url
+}
+
+export function AboutUsSection({ mainImageUrl, overlappingImageUrl }: AboutUsSectionProps = {}) {
   const [isExpanded, setIsExpanded] = useState(false)
-  const mainImage = useMemo(() => alumniImages[Math.floor(Math.random() * alumniImages.length)], [])
-  const overlappingImage = useMemo(() => alumniImages[Math.floor(Math.random() * alumniImages.length)], [])
+  const [mainError, setMainError] = useState(false)
+  const [overlapError, setOverlapError] = useState(false)
+
+  const dynamicMainUrl = getImageUrl(mainImageUrl)
+  const dynamicOverlapUrl = getImageUrl(overlappingImageUrl)
+
+  useEffect(() => {
+    setMainError(false)
+    setOverlapError(false)
+  }, [mainImageUrl, overlappingImageUrl])
+
+  const showMainImage = Boolean(dynamicMainUrl && !mainError)
+  const showOverlapImage = Boolean(dynamicOverlapUrl && !overlapError)
+
   return (
     <section 
       className="w-full py-12 md:py-16 lg:py-20 relative z-10"
@@ -40,27 +54,41 @@ export function AboutUsSection() {
           <div 
             className="absolute left-0 top-0 w-[114px] md:w-[180px] lg:w-[228px] h-[90px] md:h-[140px] lg:h-[179px]"
             style={{ 
-              background: '#3B60C9',
+              background: 'var(--color-primary)',
               clipPath: 'polygon(0 0, 0 100%, 100% 0)'
             }}
           />
           
-          {/* Main Image */}
-          <img 
-            src={mainImage}
-            alt="Students learning"
-            className="absolute left-[18px] md:left-[28px] lg:left-[35px] top-[18px] md:top-[28px] lg:top-[35px] w-[calc(100%-36px)] md:w-[calc(100%-56px)] lg:w-[403px] h-[calc(100%-36px)] md:h-[calc(100%-56px)] lg:h-[433px] rounded object-cover"
-          />
+          {/* Main image – only from API; no default on reload */}
+          {showMainImage ? (
+            <img 
+              src={dynamicMainUrl}
+              alt="ESAT-B About Us"
+              className="absolute left-[18px] md:left-[28px] lg:left-[35px] top-[18px] md:top-[28px] lg:top-[35px] w-[calc(100%-36px)] md:w-[calc(100%-56px)] lg:w-[403px] h-[calc(100%-36px)] md:h-[calc(100%-56px)] lg:h-[433px] rounded object-cover"
+              onError={() => setMainError(true)}
+            />
+          ) : (
+            <div 
+              className="absolute left-[18px] md:left-[28px] lg:left-[35px] top-[18px] md:top-[28px] lg:top-[35px] w-[calc(100%-36px)] md:w-[calc(100%-56px)] lg:w-[403px] h-[calc(100%-36px)] md:h-[calc(100%-56px)] lg:h-[433px] rounded bg-muted"
+              aria-hidden
+            />
+          )}
           
-          {/* Overlapping Image */}
-          <img 
-            src={overlappingImage}
-            alt="Students studying"
-            className="absolute right-0 bottom-0 w-[40%] md:w-[45%] lg:w-[227px] h-[60%] md:h-[65%] lg:h-[312px] rounded shadow-lg object-cover"
-            style={{ 
-              boxShadow: '0px 0px 94.47px rgba(0, 0, 0, 0.24)'
-            }}
-          />
+          {/* Overlapping image – only from API; no default on reload */}
+          {showOverlapImage ? (
+            <img 
+              src={dynamicOverlapUrl}
+              alt="ESAT-B Community"
+              className="absolute right-0 bottom-0 w-[40%] md:w-[45%] lg:w-[227px] h-[60%] md:h-[65%] lg:h-[312px] rounded shadow-lg object-cover"
+              style={{ boxShadow: '0px 0px 94.47px rgba(0, 0, 0, 0.24)' }}
+              onError={() => setOverlapError(true)}
+            />
+          ) : (
+            <div 
+              className="absolute right-0 bottom-0 w-[40%] md:w-[45%] lg:w-[227px] h-[60%] md:h-[65%] lg:h-[312px] rounded bg-muted"
+              aria-hidden
+            />
+          )}
         </div>
 
         {/* Right Side - Content */}
@@ -75,7 +103,7 @@ export function AboutUsSection() {
               </p>
               <h2 
                 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight md:leading-[56px] lg:leading-[72px]"
-                style={{ color: '#021E40' }}
+                style={{ color: 'var(--color-dark-lighter)' }}
               >
                 Ex-Students Association Of Textile Engineering College, Barishal (ESAT-B)
               </h2>
@@ -95,7 +123,7 @@ export function AboutUsSection() {
                   type="button"
                   onClick={() => setIsExpanded((prev) => !prev)}
                   className="text-sm font-semibold text-left w-fit hover:underline focus:outline-none focus:underline"
-                  style={{ color: '#3B60C9' }}
+                  style={{ color: 'var(--color-primary)' }}
                 >
                   {isExpanded ? 'See less' : 'See more'}
                 </button>

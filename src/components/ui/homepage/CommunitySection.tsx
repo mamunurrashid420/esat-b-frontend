@@ -1,22 +1,31 @@
-import { useMemo } from 'react'
+import { useEffect, useState } from 'react'
 import { Check } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import event1 from '@/assets/alumni/event/1.jpg'
-import event2 from '@/assets/alumni/event/2.jpg'
-import event3 from '@/assets/alumni/event/3.jpeg'
-import event4 from '@/assets/alumni/event/4.jpeg'
-import gallery1 from '@/assets/alumni/gallery/1.jpg'
-import gallery2 from '@/assets/alumni/gallery/2.jpg'
-import gallery3 from '@/assets/alumni/gallery/3.jpeg'
-import gallery4 from '@/assets/alumni/gallery/4.jpeg'
-import galleryBatch2005 from '@/assets/alumni/gallery/Batch-2005.jpg'
-import oldCoaching from '@/assets/alumni/old-coaching.jpeg'
+import { getApiBaseUrl } from '@/api/client'
 
-// Array of all available images (excluding logo)
-const alumniImages = [event1, event2, event3, event4, gallery1, gallery2, gallery3, gallery4, galleryBatch2005, oldCoaching]
+function getImageUrl(url: string | null | undefined): string | undefined {
+  if (!url || typeof url !== 'string') return undefined
+  if (url.startsWith('http://') || url.startsWith('https://')) return url
+  const apiBase = getApiBaseUrl()
+  return apiBase ? `${apiBase}${url.startsWith('/') ? url : `/${url}`}` : url
+}
 
-export function CommunitySection() {
-  const communityImage = useMemo(() => alumniImages[Math.floor(Math.random() * alumniImages.length)], [])
+export interface CommunitySectionProps {
+  /** Image URL (from API) for the arched image. */
+  imageUrl?: string | null
+}
+
+export function CommunitySection({ imageUrl }: CommunitySectionProps = {}) {
+  const [imgError, setImgError] = useState(false)
+  const dynamicUrl = getImageUrl(imageUrl)
+
+  useEffect(() => {
+    const t = setTimeout(() => setImgError(false), 0)
+    return () => clearTimeout(t)
+  }, [imageUrl])
+
+  const showImage = Boolean(dynamicUrl && !imgError)
+
   return (
     <section 
       className="w-full py-12 md:py-16 lg:py-20 relative"
@@ -39,12 +48,21 @@ export function CommunitySection() {
               strokeWidth="5"
             />
           </svg>
-          <img 
-            src={communityImage}
-            alt="Community"
-            className="absolute left-0 lg:left-[-20px] top-[-30px] w-[calc(100%-40px)] md:w-[calc(100%-60px)] lg:w-[478px] h-[calc(100%-40px)] md:h-[calc(100%-60px)] lg:h-[567px] rounded-t-[132px] md:rounded-t-[200px] lg:rounded-t-[265px] object-cover"
-            style={{ zIndex: 1 }}
-          />
+          {showImage ? (
+            <img 
+              src={dynamicUrl}
+              alt="Creating A Community Of Life Long Learners"
+              className="absolute left-0 lg:left-[-20px] top-[-30px] w-[calc(100%-40px)] md:w-[calc(100%-60px)] lg:w-[478px] h-[calc(100%-40px)] md:h-[calc(100%-60px)] lg:h-[567px] rounded-t-[132px] md:rounded-t-[200px] lg:rounded-t-[265px] object-cover"
+              style={{ zIndex: 1 }}
+              onError={() => setImgError(true)}
+            />
+          ) : (
+            <div 
+              className="absolute left-0 lg:left-[-20px] top-[-30px] w-[calc(100%-40px)] md:w-[calc(100%-60px)] lg:w-[478px] h-[calc(100%-40px)] md:h-[calc(100%-60px)] lg:h-[567px] rounded-t-[132px] md:rounded-t-[200px] lg:rounded-t-[265px] bg-muted"
+              style={{ zIndex: 1 }}
+              aria-hidden
+            />
+          )}
         </div>
 
         {/* Right Side - Content */}

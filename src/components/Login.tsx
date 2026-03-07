@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link, useNavigate, useSearch } from '@tanstack/react-router'
 import { ArrowLeft, Eye, EyeOff } from 'lucide-react'
 import { Input } from '@/components/ui/input'
@@ -6,8 +6,8 @@ import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { toast } from 'sonner'
 import { useAuthStore } from '@/stores/authStore'
+import { apiClient } from '@/api/client'
 import logoImage from '@/assets/alumni/logo.png'
-import oldCoachingImage from '@/assets/alumni/old-coaching.jpeg'
 
 export function Login() {
   const navigate = useNavigate()
@@ -18,6 +18,11 @@ export function Login() {
   const [showPassword, setShowPassword] = useState(false)
   const [rememberMe, setRememberMe] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [backgroundImage, setBackgroundImage] = useState<string | null>(null)
+
+  useEffect(() => {
+    apiClient.getAuthPage().then((res) => setBackgroundImage(res.data.background_image)).catch(() => {})
+  }, [])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -47,9 +52,11 @@ export function Login() {
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url(${oldCoachingImage})`
-          }}
+          style={
+            backgroundImage
+              ? { backgroundImage: `url(${backgroundImage})` }
+              : { background: 'linear-gradient(135deg, var(--color-primary) 0%, #1a365d 100%)' }
+          }
         >
           {/* Overlay */}
           <div className="absolute inset-0 bg-black/60" />
@@ -69,7 +76,7 @@ export function Login() {
           {/* Logo and School Info */}
           <div className="flex flex-col items-center">
             <div className="bg-white rounded-lg p-6 shadow-lg mb-6">
-              <div className="w-20 h-20 rounded-full border-4 border-[#3B60C9] bg-white flex items-center justify-center mx-auto mb-4 overflow-hidden">
+              <div className="w-20 h-20 rounded-full border-4 border-[var(--color-primary)] bg-white flex items-center justify-center mx-auto mb-4 overflow-hidden">
                 <img 
                   src={logoImage} 
                   alt="ESAT-B Logo" 
@@ -186,7 +193,7 @@ export function Login() {
                   <div
                     className={cn(
                       "w-11 h-6 rounded-full transition-colors duration-200 ease-in-out",
-                      rememberMe ? "bg-[#3B60C9]" : "bg-gray-300"
+                      rememberMe ? "bg-[var(--color-primary)]" : "bg-gray-300"
                     )}
                   >
                     <div
@@ -205,7 +212,7 @@ export function Login() {
                   // TODO: Implement forgot password functionality
                   console.log('Forgot password clicked')
                 }}
-                className="text-sm hover:text-[#3B60C9] transition-colors"
+                className="text-sm hover:text-[var(--color-primary)] transition-colors"
               >
                 Forgot password?
               </button>
@@ -215,7 +222,7 @@ export function Login() {
             <Button
               type="submit"
               disabled={isLoading}
-              className="w-full bg-[#3B60C9] hover:bg-[#2d4fa8] text-white py-2.5 rounded-md transition-colors font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white py-2.5 rounded-md transition-colors font-medium disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isLoading ? 'Logging in...' : 'Login'}
             </Button>
@@ -224,7 +231,7 @@ export function Login() {
             <div className="text-center pt-4">
               <p className="text-sm">
                 Don't have an account?{' '}
-                <Link to="/register" className="text-[#3B60C9] hover:underline font-medium">
+                <Link to="/register" className="text-[var(--color-primary)] hover:underline font-medium">
                   Sign Up
                 </Link>
               </p>

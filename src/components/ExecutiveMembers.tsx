@@ -50,14 +50,21 @@ export function ExecutiveMembers() {
                       {member.photo ? (
                         <img
                           src={member.photo}
-                          alt=""
+                          alt={member.name}
                           className="h-24 w-24 rounded-full object-cover ring-2 ring-gray-100"
+                          onError={(e) => {
+                            e.currentTarget.style.display = 'none'
+                            const fallback = e.currentTarget.nextElementSibling as HTMLElement
+                            if (fallback) fallback.style.display = 'flex'
+                          }}
                         />
-                      ) : (
-                        <div className="h-24 w-24 rounded-full bg-gray-100 flex items-center justify-center text-black/60 text-2xl font-medium">
-                          {member.name.charAt(0)}
-                        </div>
-                      )}
+                      ) : null}
+                      <div
+                        className="h-24 w-24 rounded-full bg-gray-100 flex items-center justify-center text-black/60 text-2xl font-medium"
+                        style={{ display: member.photo ? 'none' : 'flex' }}
+                      >
+                        {member.name.charAt(0)}
+                      </div>
                     </div>
                     <div className="px-4 pb-4 text-center space-y-1 text-black">
                       <h3 className="font-semibold text-black">{member.name}</h3>

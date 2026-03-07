@@ -1,4 +1,4 @@
-import { createRouter, createRoute, createRootRoute, Outlet } from '@tanstack/react-router'
+import { createRouter, createRoute, createRootRoute, Outlet, Navigate } from '@tanstack/react-router'
 import { Toaster } from 'sonner'
 import { HomepageLayout } from '@/layouts/HomepageLayout'
 import { UserSpaceLayout } from '@/layouts/UserSpaceLayout'
@@ -144,8 +144,6 @@ import { Dashboard } from '@/components/Dashboard'
 import { Profile } from '@/components/Profile'
 import { Payment } from '@/components/Payment'
 import { MakePayment } from '@/components/MakePayment'
-import { SelfDeclaration } from '@/components/SelfDeclaration'
-import { Certificate } from '@/components/Certificate'
 import { ScholarshipApplicationFormPage } from '@/components/ScholarshipApplicationFormPage'
 
 // Dashboard route
@@ -211,30 +209,18 @@ const makePaymentPublicRoute = createRoute({
   ),
 })
 
-// Self Declaration route
+// Self Declaration route (disabled – redirects to dashboard)
 const selfDeclarationRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/self-declaration',
-  component: () => (
-    <ProtectedRoute>
-      <UserSpaceLayout title="Self Declaration" subtitle="Submit your self-declaration form">
-        <SelfDeclaration />
-      </UserSpaceLayout>
-    </ProtectedRoute>
-  ),
+  component: () => <Navigate to="/dashboard" replace />,
 })
 
-// Certificate route
+// Certificate route (disabled – redirects to dashboard)
 const certificateRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/certificate',
-  component: () => (
-    <ProtectedRoute>
-      <UserSpaceLayout title="Membership Certificate" subtitle="View and download your membership certificate">
-        <Certificate />
-      </UserSpaceLayout>
-    </ProtectedRoute>
-  ),
+  component: () => <Navigate to="/dashboard" replace />,
 })
 
 // Scholarship apply route (member dashboard)

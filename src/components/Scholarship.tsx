@@ -80,15 +80,15 @@ export function Scholarship() {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="w-full py-12 md:py-16 lg:py-20 bg-gradient-to-br from-[#3B60C9]/10 to-white">
+      <section className="w-full py-12 md:py-16 lg:py-20 bg-gradient-to-br from-[var(--color-primary)]/10 to-white">
         <div className="container mx-auto px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 max-w-7xl">
           <div className="flex flex-col items-center text-center gap-6 md:gap-8">
-            <div className="flex items-center justify-center w-20 h-20 md:w-24 md:h-24 rounded-full bg-[#3B60C9] text-white mb-4">
+            <div className="flex items-center justify-center w-20 h-20 md:w-24 md:h-24 rounded-full bg-[var(--color-primary)] text-white mb-4">
               <GraduationCap className="w-10 h-10 md:w-12 md:h-12" />
             </div>
             <h1 
               className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight"
-              style={{ color: '#021E40' }}
+              style={{ color: 'var(--color-dark-lighter)' }}
             >
               ESAT-B Scholarship Program
             </h1>
@@ -104,7 +104,7 @@ export function Scholarship() {
                 onClick={handleApplyClick}
                 className="w-full sm:w-auto px-8 h-[50px] md:h-[56px] text-base md:text-lg font-semibold rounded-md"
                 style={{ 
-                  background: '#3B60C9',
+                  background: 'var(--color-primary)',
                   color: '#FFFFFF',
                 }}
               >
@@ -128,7 +128,7 @@ export function Scholarship() {
               </p>
               <h2 
                 className="text-2xl md:text-3xl lg:text-4xl font-semibold"
-                style={{ color: '#021E40' }}
+                style={{ color: 'var(--color-dark-lighter)' }}
               >
                 Scholarship Categories
               </h2>
@@ -157,7 +157,7 @@ export function Scholarship() {
                     <div className="flex items-center gap-3">
                       <div 
                         className="w-12 h-12 rounded-full flex items-center justify-center shrink-0"
-                        style={{ background: '#3B60C9' }}
+                        style={{ background: 'var(--color-primary)' }}
                       >
                         <Award className="w-6 h-6 text-white" />
                       </div>
@@ -165,7 +165,7 @@ export function Scholarship() {
                         <span 
                           className="text-xs md:text-sm font-semibold px-3 py-1 rounded-full"
                           style={{ 
-                            background: '#3B60C9',
+                            background: 'var(--color-primary)',
                             color: '#FFFFFF'
                           }}
                         >
@@ -175,7 +175,7 @@ export function Scholarship() {
                     </div>
                     <h3 
                       className="text-lg md:text-xl font-semibold"
-                      style={{ color: '#021E40' }}
+                      style={{ color: 'var(--color-dark-lighter)' }}
                     >
                       {scholarship.title}
                     </h3>
@@ -201,7 +201,7 @@ export function Scholarship() {
           <div className="flex flex-col gap-6 md:gap-8">
             <h2 
               className="text-2xl md:text-3xl lg:text-4xl font-semibold"
-              style={{ color: '#021E40' }}
+              style={{ color: 'var(--color-dark-lighter)' }}
             >
               Introduction
             </h2>
@@ -221,7 +221,7 @@ export function Scholarship() {
           <div className="flex flex-col gap-6 md:gap-8">
             <h2 
               className="text-2xl md:text-3xl lg:text-4xl font-semibold"
-              style={{ color: '#021E40' }}
+              style={{ color: 'var(--color-dark-lighter)' }}
             >
               Objectives
             </h2>
@@ -236,7 +236,7 @@ export function Scholarship() {
                 <li key={index} className="flex items-start gap-3">
                   <CheckCircle2 
                     className="w-5 h-5 md:w-6 md:h-6 shrink-0 mt-1"
-                    style={{ color: '#3B60C9' }}
+                    style={{ color: 'var(--color-primary)' }}
                   />
                   <p 
                     className="text-base md:text-lg leading-relaxed"
@@ -258,13 +258,13 @@ export function Scholarship() {
             <div className="flex items-center gap-4">
               <div 
                 className="w-12 h-12 rounded-lg flex items-center justify-center shrink-0"
-                style={{ background: '#3B60C9' }}
+                style={{ background: 'var(--color-primary)' }}
               >
                 <BookOpen className="w-6 h-6 text-white" />
               </div>
               <h2 
                 className="text-2xl md:text-3xl lg:text-4xl font-semibold"
-                style={{ color: '#021E40' }}
+                style={{ color: 'var(--color-dark-lighter)' }}
               >
                 Scholarship Coverage
               </h2>
@@ -284,7 +284,7 @@ export function Scholarship() {
                 >
                   <div 
                     className="w-2 h-2 rounded-full shrink-0 mt-2"
-                    style={{ background: '#3B60C9' }}
+                    style={{ background: 'var(--color-primary)' }}
                   />
                   <p 
                     className="text-base md:text-lg leading-relaxed"
@@ -306,13 +306,13 @@ export function Scholarship() {
             <div className="flex items-center gap-4">
               <div 
                 className="w-12 h-12 rounded-lg flex items-center justify-center shrink-0"
-                style={{ background: '#3B60C9' }}
+                style={{ background: 'var(--color-primary)' }}
               >
                 <Users className="w-6 h-6 text-white" />
               </div>
               <h2 
                 className="text-2xl md:text-3xl lg:text-4xl font-semibold"
-                style={{ color: '#021E40' }}
+                style={{ color: 'var(--color-dark-lighter)' }}
               >
                 Eligibility Criteria
               </h2>
@@ -329,7 +329,7 @@ export function Scholarship() {
                   <div 
                     className="w-6 h-6 rounded-full flex items-center justify-center shrink-0 mt-0.5"
                     style={{ 
-                      background: '#3B60C9',
+                      background: 'var(--color-primary)',
                       color: '#FFFFFF'
                     }}
                   >
@@ -354,7 +354,7 @@ export function Scholarship() {
           <div className="flex flex-col gap-6 md:gap-8">
             <h2 
               className="text-2xl md:text-3xl lg:text-4xl font-semibold"
-              style={{ color: '#021E40' }}
+              style={{ color: 'var(--color-dark-lighter)' }}
             >
               Application Process
             </h2>
@@ -374,7 +374,7 @@ export function Scholarship() {
                   <div 
                     className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
                     style={{ 
-                      background: '#3B60C9',
+                      background: 'var(--color-primary)',
                       color: '#FFFFFF'
                     }}
                   >
@@ -405,7 +405,7 @@ export function Scholarship() {
           <div className="flex flex-col gap-6 md:gap-8">
             <h2 
               className="text-2xl md:text-3xl lg:text-4xl font-semibold"
-              style={{ color: '#021E40' }}
+              style={{ color: 'var(--color-dark-lighter)' }}
             >
               Selection Process
             </h2>
@@ -424,7 +424,7 @@ export function Scholarship() {
                 >
                   <CheckCircle2 
                     className="w-5 h-5 md:w-6 md:h-6 shrink-0"
-                    style={{ color: '#3B60C9' }}
+                    style={{ color: 'var(--color-primary)' }}
                   />
                   <p 
                     className="text-base md:text-lg leading-relaxed"
@@ -437,7 +437,7 @@ export function Scholarship() {
             </div>
             <p 
               className="text-base md:text-lg leading-relaxed mt-4 font-semibold"
-              style={{ color: '#021E40' }}
+              style={{ color: 'var(--color-dark-lighter)' }}
             >
               The decision of the Scholarship Committee will be final.
             </p>
@@ -451,7 +451,7 @@ export function Scholarship() {
           <div className="flex flex-col gap-6 md:gap-8">
             <h2 
               className="text-2xl md:text-3xl lg:text-4xl font-semibold"
-              style={{ color: '#021E40' }}
+              style={{ color: 'var(--color-dark-lighter)' }}
             >
               Responsibilities of Scholarship Recipients
             </h2>
@@ -467,7 +467,7 @@ export function Scholarship() {
                   <div 
                     className="w-6 h-6 rounded-full flex items-center justify-center shrink-0 mt-0.5"
                     style={{ 
-                      background: '#3B60C9',
+                      background: 'var(--color-primary)',
                       color: '#FFFFFF'
                     }}
                   >
@@ -493,13 +493,13 @@ export function Scholarship() {
             <div className="flex items-center gap-4">
               <div 
                 className="w-12 h-12 rounded-lg flex items-center justify-center shrink-0"
-                style={{ background: '#3B60C9' }}
+                style={{ background: 'var(--color-primary)' }}
               >
                 <Heart className="w-6 h-6 text-white" />
               </div>
               <h2 
                 className="text-2xl md:text-3xl lg:text-4xl font-semibold"
-                style={{ color: '#021E40' }}
+                style={{ color: 'var(--color-dark-lighter)' }}
               >
                 Funding Source
               </h2>
@@ -515,7 +515,7 @@ export function Scholarship() {
       </section>
 
       {/* Conclusion Section */}
-      <section className="w-full py-12 md:py-16 lg:py-20" style={{ background: 'linear-gradient(135deg, #3B60C9 0%, #2348B2 100%)' }}>
+      <section className="w-full py-12 md:py-16 lg:py-20" style={{ background: 'linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%)' }}>
         <div className="container mx-auto px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 max-w-7xl">
           <div className="flex flex-col gap-6 md:gap-8 text-center">
             <h2 
@@ -537,7 +537,7 @@ export function Scholarship() {
                 className="w-full sm:w-auto px-8 h-[50px] md:h-[56px] text-base md:text-lg font-semibold rounded-md"
                 style={{ 
                   background: '#FFFFFF',
-                  color: '#3B60C9',
+                  color: 'var(--color-primary)',
                 }}
               >
                 Apply for Scholarship

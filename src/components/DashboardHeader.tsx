@@ -47,14 +47,14 @@ export function DashboardHeader({ title, subtitle }: DashboardHeaderProps) {
           {/* Profile Link */}
           <Link
             to="/profile"
-            className="flex items-center gap-1.5 md:gap-2 text-black hover:text-[#3B60C9] transition-colors"
+            className="flex items-center gap-1.5 md:gap-2 text-black hover:text-[var(--color-primary)] transition-colors"
           >
             <User className="w-4 h-4 md:w-5 md:h-5" />
             <span className="text-xs md:text-sm font-medium hidden sm:inline">Profile</span>
           </Link>
 
           {/* Notifications */}
-          <button className="relative text-black hover:text-[#3B60C9] transition-colors p-1">
+          <button className="relative text-black hover:text-[var(--color-primary)] transition-colors p-1">
             <Bell className="w-4 h-4 md:w-5 md:h-5" />
             <span className="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full" />
           </button>

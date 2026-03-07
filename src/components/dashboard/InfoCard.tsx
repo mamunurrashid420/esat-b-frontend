@@ -35,7 +35,7 @@ export function InfoCard({
           'flex-shrink-0 p-2 rounded-full transition-colors',
           actionIcon === 'download'
             ? 'text-black hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed'
-            : 'bg-[#3B60C9] text-white hover:bg-[#2348B2] disabled:opacity-50 disabled:cursor-not-allowed'
+            : 'bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary-dark)] disabled:opacity-50 disabled:cursor-not-allowed'
         )}
       >
         {isLoading ? (

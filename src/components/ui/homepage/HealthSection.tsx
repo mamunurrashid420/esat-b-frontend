@@ -1,19 +1,7 @@
-import { useMemo } from 'react'
+import { useEffect, useState } from 'react'
 import { Clock, Wifi, Check } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import event1 from '@/assets/alumni/event/1.jpg'
-import event2 from '@/assets/alumni/event/2.jpg'
-import event3 from '@/assets/alumni/event/3.jpeg'
-import event4 from '@/assets/alumni/event/4.jpeg'
-import gallery1 from '@/assets/alumni/gallery/1.jpg'
-import gallery2 from '@/assets/alumni/gallery/2.jpg'
-import gallery3 from '@/assets/alumni/gallery/3.jpeg'
-import gallery4 from '@/assets/alumni/gallery/4.jpeg'
-import galleryBatch2005 from '@/assets/alumni/gallery/Batch-2005.jpg'
-import oldCoaching from '@/assets/alumni/old-coaching.jpeg'
-
-// Array of all available images (excluding logo)
-const alumniImages = [event1, event2, event3, event4, gallery1, gallery2, gallery3, gallery4, galleryBatch2005, oldCoaching]
+import { getApiBaseUrl } from '@/api/client'
 
 const healthServices = [
   'Blood Group Database',
@@ -23,10 +11,34 @@ const healthServices = [
   'Hospital & Clinic Contacts and Addresses'
 ]
 
-export function HealthSection() {
-  const classroomImage = useMemo(() => alumniImages[Math.floor(Math.random() * alumniImages.length)], [])
-  const collaborationImage = useMemo(() => alumniImages[Math.floor(Math.random() * alumniImages.length)], [])
-  
+function getImageUrl(url: string | null | undefined): string | undefined {
+  if (!url || typeof url !== 'string') return undefined
+  if (url.startsWith('http://') || url.startsWith('https://')) return url
+  const apiBase = getApiBaseUrl()
+  return apiBase ? `${apiBase}${url.startsWith('/') ? url : `/${url}`}` : url
+}
+
+export interface HealthSectionProps {
+  /** Main image URL (from API). */
+  mainImageUrl?: string | null
+  /** Overlapping image URL (from API). */
+  overlappingImageUrl?: string | null
+}
+
+export function HealthSection({ mainImageUrl, overlappingImageUrl }: HealthSectionProps = {}) {
+  const [mainError, setMainError] = useState(false)
+  const [overlapError, setOverlapError] = useState(false)
+  const dynamicMainUrl = getImageUrl(mainImageUrl)
+  const dynamicOverlapUrl = getImageUrl(overlappingImageUrl)
+
+  useEffect(() => {
+    setMainError(false)
+    setOverlapError(false)
+  }, [mainImageUrl, overlappingImageUrl])
+
+  const showMainImage = Boolean(dynamicMainUrl && !mainError)
+  const showOverlapImage = Boolean(dynamicOverlapUrl && !overlapError)
+
   return (
     <section className="w-full py-12 md:py-16 lg:py-20 flex flex-col items-center">
       <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 box-border">
@@ -40,26 +52,39 @@ export function HealthSection() {
             flexGrow: 0
           }}
         >
-          {/* Main Image - Top Left (Classroom Scene) */}
-          <img 
-            src={classroomImage}
-            alt="Classroom with students and teacher"
-            className="absolute left-[22px] md:left-[32px] lg:left-[43px] top-0 w-[calc(100%-44px)] md:w-[calc(100%-64px)] lg:w-[536px] h-[calc(50%-20px)] md:h-[calc(55%-30px)] lg:h-[488px] rounded-[20px] md:rounded-[30px] lg:rounded-[40px] object-cover"
-            style={{ 
-              transform: 'rotate(5deg)', 
-              borderRadius: '20px 20px 20px 0'
-            }}
-          />
-          
-          {/* Overlapping Image - Bottom Right (Collaborative Group) */}
-          <img 
-            src={collaborationImage}
-            alt="Collaborative group discussion"
-            className="absolute right-0 bottom-[29px] md:bottom-[44px] lg:bottom-[58px] w-[45%] md:w-[50%] lg:w-[364px] h-[calc(45%-20px)] md:h-[calc(50%-30px)] lg:h-[352px] rounded-[20px] md:rounded-[30px] lg:rounded-[40px] z-10 object-cover"
-            style={{ 
-              transform: 'rotate(5deg)'
-            }}
-          />
+          {/* Main image – from API; no default on reload */}
+          {showMainImage ? (
+            <img 
+              src={dynamicMainUrl}
+              alt="Supporting Alumni Health & Wellness"
+              className="absolute left-[22px] md:left-[32px] lg:left-[43px] top-0 w-[calc(100%-44px)] md:w-[calc(100%-64px)] lg:w-[536px] h-[calc(50%-20px)] md:h-[calc(55%-30px)] lg:h-[488px] rounded-[20px] md:rounded-[30px] lg:rounded-[40px] object-cover"
+              style={{ transform: 'rotate(5deg)', borderRadius: '20px 20px 20px 0' }}
+              onError={() => setMainError(true)}
+            />
+          ) : (
+            <div 
+              className="absolute left-[22px] md:left-[32px] lg:left-[43px] top-0 w-[calc(100%-44px)] md:w-[calc(100%-64px)] lg:w-[536px] h-[calc(50%-20px)] md:h-[calc(55%-30px)] lg:h-[488px] rounded-[20px] md:rounded-[30px] lg:rounded-[40px] bg-muted"
+              style={{ transform: 'rotate(5deg)', borderRadius: '20px 20px 20px 0' }}
+              aria-hidden
+            />
+          )}
+
+          {/* Overlapping image – from API; no default on reload */}
+          {showOverlapImage ? (
+            <img 
+              src={dynamicOverlapUrl}
+              alt="Alumni community"
+              className="absolute right-0 bottom-[29px] md:bottom-[44px] lg:bottom-[58px] w-[45%] md:w-[50%] lg:w-[364px] h-[calc(45%-20px)] md:h-[calc(50%-30px)] lg:h-[352px] rounded-[20px] md:rounded-[30px] lg:rounded-[40px] z-10 object-cover"
+              style={{ transform: 'rotate(5deg)' }}
+              onError={() => setOverlapError(true)}
+            />
+          ) : (
+            <div 
+              className="absolute right-0 bottom-[29px] md:bottom-[44px] lg:bottom-[58px] w-[45%] md:w-[50%] lg:w-[364px] h-[calc(45%-20px)] md:h-[calc(50%-30px)] lg:h-[352px] rounded-[20px] md:rounded-[30px] lg:rounded-[40px] bg-muted z-10"
+              style={{ transform: 'rotate(5deg)' }}
+              aria-hidden
+            />
+          )}
 
           {/* Stats Box - Bottom Left (Purple Box) */}
           <div 

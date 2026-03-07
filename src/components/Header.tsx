@@ -38,14 +38,15 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white">
-      {/* Top Blue Bar */}
-      <div className="h-7 sm:h-8 bg-[#3B60C9] w-full flex items-center justify-end gap-2 px-3 sm:px-4 md:px-8 lg:px-12 xl:px-20 2xl:px-80">
+      {/* Top Bar - Logo Gold */}
+      <div className="h-7 sm:h-8 w-full flex items-center justify-end gap-2 px-3 sm:px-4 md:px-8 lg:px-12 xl:px-20 2xl:px-80" style={{ background: 'var(--color-gold)' }}>
         {!isAuthenticated && (
           <Link to="/register">
             <Button
               variant="outline"
               size="sm"
-              className="bg-white text-[#3B60C9] hover:bg-gray-100 border-0 h-5 sm:h-6 text-[10px] sm:text-xs px-2 sm:px-3"
+              className="bg-white border-0 h-5 sm:h-6 text-[10px] sm:text-xs px-2 sm:px-3 hover:bg-gray-100"
+              style={{ color: 'var(--color-gold-dark)' }}
             >
               <span className="hidden sm:inline">Apply for Membership</span>
               <span className="sm:hidden">Apply</span>
@@ -56,7 +57,8 @@ export function Header() {
           <Button
             variant="outline"
             size="sm"
-            className="bg-white text-[#3B60C9] hover:bg-gray-100 border-0 h-5 sm:h-6 text-[10px] sm:text-xs px-2 sm:px-3"
+            className="bg-white hover:bg-gray-100 border-0 h-5 sm:h-6 text-[10px] sm:text-xs px-2 sm:px-3"
+            style={{ color: 'var(--color-gold-dark)' }}
           >
             <span className="hidden sm:inline">Make Payment/Donate</span>
             <span className="sm:hidden">Payment</span>
@@ -72,7 +74,7 @@ export function Header() {
             <Button
               variant="outline"
               size="sm"
-              className="bg-white text-[#3B60C9] hover:bg-gray-100 border-0 h-5 sm:h-6 text-[10px] sm:text-xs px-2 sm:px-3"
+              className="bg-white hover:bg-gray-100 border-0 h-5 sm:h-6 text-[10px] sm:text-xs px-2 sm:px-3" style={{ color: 'var(--color-gold-dark)' }}
               onClick={() => logout()}
             >
               <span className="hidden sm:inline">Log Out</span>
@@ -84,7 +86,8 @@ export function Header() {
             <Button
               variant="outline"
               size="sm"
-              className="bg-white text-[#3B60C9] hover:bg-gray-100 border-0 h-5 sm:h-6 text-[10px] sm:text-xs px-2 sm:px-3"
+              className="bg-white hover:bg-gray-100 border-0 h-5 sm:h-6 text-[10px] sm:text-xs px-2 sm:px-3"
+              style={{ color: 'var(--color-gold-dark)' }}
             >
               <span className="hidden sm:inline">Log In</span>
               <span className="sm:hidden">Login</span>
@@ -97,18 +100,18 @@ export function Header() {
       <div className="min-h-[70px] sm:h-[90px] lg:h-[100px] bg-white shadow-lg w-full flex items-center justify-between px-3 sm:px-4 md:px-8 lg:px-12 xl:px-20 2xl:px-80 gap-4 sm:gap-6 lg:gap-10">
         {/* Logo and School Name */}
         <Link to="/" className="flex items-center gap-2 sm:gap-3 md:gap-4 shrink-0 no-underline">
-          <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full border-2 sm:border-3 md:border-4 border-[#3B60C9] bg-white flex items-center justify-center shrink-0 overflow-hidden">
+          <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full border-2 sm:border-3 md:border-4 bg-white flex items-center justify-center shrink-0 overflow-hidden" style={{ borderColor: 'var(--color-primary)' }}>
             <img 
               src={logoImage} 
               alt="ESAT-B Logo" 
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="block">
-            <h1 className="text-[#3B60C9] font-bold text-xs sm:text-sm md:text-base lg:text-lg leading-tight">
+          <div className="block" style={{ color: 'var(--color-primary)' }}>
+            <h1 className="font-bold text-xs sm:text-sm md:text-base lg:text-lg leading-tight">
               EX-STUDENTS ASSOCIATION OF
             </h1>
-            <p className="text-[#3B60C9] text-[10px] sm:text-xs md:text-sm">TEXTILE ENGINEERING COLLEGE, BARISHAL (ESAT-B)</p>
+            <p className="text-[10px] sm:text-xs md:text-sm">TEXTILE ENGINEERING COLLEGE, BARISHAL (ESAT-B)</p>
           </div>
         </Link>
 
@@ -119,7 +122,7 @@ export function Header() {
               return (
                 <DropdownMenu key={item.href}>
                   <DropdownMenuTrigger asChild>
-                    <button className="text-[#3B60C9] font-medium hover:underline flex items-center gap-1 text-sm xl:text-base whitespace-nowrap cursor-pointer">
+                    <button className="font-medium hover:underline flex items-center gap-1 text-sm xl:text-base whitespace-nowrap cursor-pointer" style={{ color: 'var(--color-primary)' }}>
                       {item.label}
                       <ChevronDown className="w-3 h-3 xl:w-4 xl:h-4" />
                     </button>
@@ -129,7 +132,8 @@ export function Header() {
                       <DropdownMenuItem
                         key={menuItem.href}
                         onClick={() => navigate({ to: menuItem.href })}
-                        className="cursor-pointer text-[#3B60C9]"
+                        className="cursor-pointer"
+                        style={{ color: 'var(--color-primary)' }}
                       >
                         {menuItem.label}
                       </DropdownMenuItem>
@@ -142,7 +146,8 @@ export function Header() {
               <Link
                 key={item.href}
                 to={item.href}
-                className="text-[#3B60C9] font-medium hover:underline flex items-center gap-1 text-sm xl:text-base whitespace-nowrap"
+                className="font-medium hover:underline flex items-center gap-1 text-sm xl:text-base whitespace-nowrap"
+                style={{ color: 'var(--color-primary)' }}
               >
                 {item.label}
               </Link>
@@ -152,7 +157,8 @@ export function Header() {
 
         {/* Mobile Menu Button */}
         <button
-          className="lg:hidden text-[#3B60C9] p-2 hover:bg-gray-100 rounded transition-colors"
+          className="lg:hidden p-2 hover:bg-gray-100 rounded transition-colors"
+          style={{ color: 'var(--color-primary)' }}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -174,7 +180,7 @@ export function Header() {
                   <div key={item.href} className="flex flex-col">
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
-                        <button className="text-[#3B60C9] font-medium hover:bg-gray-50 flex items-center justify-between py-2 sm:py-2.5 px-2 rounded transition-colors w-full text-left">
+                        <button className="font-medium hover:bg-gray-50 flex items-center justify-between py-2 sm:py-2.5 px-2 rounded transition-colors w-full text-left" style={{ color: 'var(--color-primary)' }}>
                           <span className="text-sm sm:text-base">{item.label}</span>
                           <ChevronDown className="w-4 h-4" />
                         </button>
@@ -192,7 +198,8 @@ export function Header() {
                               navigate({ to: menuItem.href })
                               setIsMobileMenuOpen(false)
                             }}
-                            className="cursor-pointer text-[#3B60C9]"
+                            className="cursor-pointer"
+                        style={{ color: 'var(--color-primary)' }}
                           >
                             {menuItem.label}
                           </DropdownMenuItem>
@@ -206,7 +213,8 @@ export function Header() {
                 <Link
                   key={item.href}
                   to={item.href}
-                  className="text-[#3B60C9] font-medium hover:bg-gray-50 flex items-center justify-between py-2 sm:py-2.5 px-2 rounded transition-colors"
+                  className="font-medium hover:bg-gray-50 flex items-center justify-between py-2 sm:py-2.5 px-2 rounded transition-colors"
+                style={{ color: 'var(--color-primary)' }}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <span className="text-sm sm:text-base">{item.label}</span>

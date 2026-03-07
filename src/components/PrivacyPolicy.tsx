@@ -13,7 +13,7 @@ export function PrivacyPolicy() {
           <p className="text-sm md:text-base font-semibold" style={{ color: '#999898' }}>
             Privacy Policy
           </p>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight" style={{ color: '#021E40' }}>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight" style={{ color: 'var(--color-dark-lighter)' }}>
             Ex-Students Association Of Textile Engineering College, Barishal (ESAT-B) Privacy Policy
           </h1>
           <p className="text-sm md:text-base mt-2" style={{ color: '#696868' }}>
@@ -30,7 +30,7 @@ export function PrivacyPolicy() {
 
         {/* Section 1: Information We Collect */}
         <div className="flex flex-col gap-4 mt-6">
-          <h2 className="text-xl md:text-2xl font-semibold" style={{ color: '#021E40' }}>
+          <h2 className="text-xl md:text-2xl font-semibold" style={{ color: 'var(--color-dark-lighter)' }}>
             1. Information We Collect
           </h2>
           <p className="text-sm md:text-base leading-relaxed md:leading-[26px]" style={{ color: '#696868' }}>
@@ -49,7 +49,7 @@ export function PrivacyPolicy() {
 
         {/* Section 2: Purpose of Data Collection */}
         <div className="flex flex-col gap-4 mt-6">
-          <h2 className="text-xl md:text-2xl font-semibold" style={{ color: '#021E40' }}>
+          <h2 className="text-xl md:text-2xl font-semibold" style={{ color: 'var(--color-dark-lighter)' }}>
             2. Purpose of Data Collection
           </h2>
           <p className="text-sm md:text-base leading-relaxed md:leading-[26px]" style={{ color: '#696868' }}>
@@ -66,7 +66,7 @@ export function PrivacyPolicy() {
 
         {/* Section 3: Use and Sharing of Information */}
         <div className="flex flex-col gap-4 mt-6">
-          <h2 className="text-xl md:text-2xl font-semibold" style={{ color: '#021E40' }}>
+          <h2 className="text-xl md:text-2xl font-semibold" style={{ color: 'var(--color-dark-lighter)' }}>
             3. Use and Sharing of Information
           </h2>
           <ul className="list-disc pl-6 md:pl-8 space-y-2 text-sm md:text-base leading-relaxed md:leading-[26px]" style={{ color: '#696868' }}>
@@ -78,7 +78,7 @@ export function PrivacyPolicy() {
 
         {/* Section 4: Data Security */}
         <div className="flex flex-col gap-4 mt-6">
-          <h2 className="text-xl md:text-2xl font-semibold" style={{ color: '#021E40' }}>
+          <h2 className="text-xl md:text-2xl font-semibold" style={{ color: 'var(--color-dark-lighter)' }}>
             4. Data Security
           </h2>
           <ul className="list-disc pl-6 md:pl-8 space-y-2 text-sm md:text-base leading-relaxed md:leading-[26px]" style={{ color: '#696868' }}>
@@ -89,7 +89,7 @@ export function PrivacyPolicy() {
 
         {/* Section 5: Payment Information */}
         <div className="flex flex-col gap-4 mt-6">
-          <h2 className="text-xl md:text-2xl font-semibold" style={{ color: '#021E40' }}>
+          <h2 className="text-xl md:text-2xl font-semibold" style={{ color: 'var(--color-dark-lighter)' }}>
             5. Payment Information
           </h2>
           <ul className="list-disc pl-6 md:pl-8 space-y-2 text-sm md:text-base leading-relaxed md:leading-[26px]" style={{ color: '#696868' }}>
@@ -100,7 +100,7 @@ export function PrivacyPolicy() {
 
         {/* Section 6: Rights of Members and Participants */}
         <div className="flex flex-col gap-4 mt-6">
-          <h2 className="text-xl md:text-2xl font-semibold" style={{ color: '#021E40' }}>
+          <h2 className="text-xl md:text-2xl font-semibold" style={{ color: 'var(--color-dark-lighter)' }}>
             6. Rights of Members and Participants
           </h2>
           <p className="text-sm md:text-base leading-relaxed md:leading-[26px]" style={{ color: '#696868' }}>
@@ -115,7 +115,7 @@ export function PrivacyPolicy() {
 
         {/* Section 7: Cookies and Online Tracking */}
         <div className="flex flex-col gap-4 mt-6">
-          <h2 className="text-xl md:text-2xl font-semibold" style={{ color: '#021E40' }}>
+          <h2 className="text-xl md:text-2xl font-semibold" style={{ color: 'var(--color-dark-lighter)' }}>
             7. Cookies and Online Tracking (If Applicable)
           </h2>
           <p className="text-sm md:text-base leading-relaxed md:leading-[26px]" style={{ color: '#696868' }}>
@@ -125,7 +125,7 @@ export function PrivacyPolicy() {
 
         {/* Section 8: Policy Updates */}
         <div className="flex flex-col gap-4 mt-6">
-          <h2 className="text-xl md:text-2xl font-semibold" style={{ color: '#021E40' }}>
+          <h2 className="text-xl md:text-2xl font-semibold" style={{ color: 'var(--color-dark-lighter)' }}>
             8. Policy Updates
           </h2>
           <p className="text-sm md:text-base leading-relaxed md:leading-[26px]" style={{ color: '#696868' }}>
@@ -135,7 +135,7 @@ export function PrivacyPolicy() {
 
         {/* Section 9: Contact Information */}
         <div className="flex flex-col gap-4 mt-6">
-          <h2 className="text-xl md:text-2xl font-semibold" style={{ color: '#021E40' }}>
+          <h2 className="text-xl md:text-2xl font-semibold" style={{ color: 'var(--color-dark-lighter)' }}>
             9. Contact Information
           </h2>
           <p className="text-sm md:text-base leading-relaxed md:leading-[26px]" style={{ color: '#696868' }}>
@@ -144,13 +144,13 @@ export function PrivacyPolicy() {
           <div className="bg-gray-50 p-4 md:p-6 rounded-lg border border-gray-200 mt-2">
             <ul className="space-y-3 text-sm md:text-base leading-relaxed" style={{ color: '#696868' }}>
               <li>
-                <span className="font-semibold" style={{ color: '#021E40' }}>Email:</span> info@esatb.org
+                <span className="font-semibold" style={{ color: 'var(--color-dark-lighter)' }}>Email:</span> info@esatb.org
               </li>
               <li>
-                <span className="font-semibold" style={{ color: '#021E40' }}>Call:</span> +880 1712631461
+                <span className="font-semibold" style={{ color: 'var(--color-dark-lighter)' }}>Call:</span> +880 1712631461
               </li>
               <li>
-                <span className="font-semibold" style={{ color: '#021E40' }}>Office Address:</span> Hossain Tower, 5th Floor, Sector #7, Uttara, Dhaka, Bangladesh
+                <span className="font-semibold" style={{ color: 'var(--color-dark-lighter)' }}>Office Address:</span> Hossain Tower, 5th Floor, Sector #7, Uttara, Dhaka, Bangladesh
               </li>
             </ul>
           </div>
@@ -158,8 +158,8 @@ export function PrivacyPolicy() {
 
         {/* Consent Section */}
         <div className="flex flex-col gap-4 mt-8">
-          <div className="bg-blue-50 p-4 md:p-6 rounded-lg border-l-4" style={{ borderLeftColor: '#3B60C9' }}>
-            <h3 className="text-lg md:text-xl font-semibold mb-3" style={{ color: '#021E40' }}>
+          <div className="bg-blue-50 p-4 md:p-6 rounded-lg border-l-4" style={{ borderLeftColor: 'var(--color-primary)' }}>
+            <h3 className="text-lg md:text-xl font-semibold mb-3" style={{ color: 'var(--color-dark-lighter)' }}>
               Consent
             </h3>
             <p className="text-sm md:text-base leading-relaxed md:leading-[26px]" style={{ color: '#696868' }}>

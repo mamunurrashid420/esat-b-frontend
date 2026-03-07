@@ -506,7 +506,7 @@ export function MakePayment({ showMemberId = true }: MakePaymentProps = {}) {
                     setPaymentSubmitted(false)
                     setSubmittedPaymentData(null)
                   }}
-                  className="bg-[#3B60C9] hover:bg-[#3B60C9]/90 text-white"
+                  className="bg-[var(--color-primary)] hover:bg-[var(--color-primary)]/90 text-white"
                 >
                   Submit Another Payment
                 </Button>
@@ -747,7 +747,7 @@ export function MakePayment({ showMemberId = true }: MakePaymentProps = {}) {
               className={cn(
                 "border-2 border-dashed rounded-lg p-8 text-center cursor-pointer transition-colors",
                 isDragging
-                  ? "border-[#3B60C9] bg-blue-50"
+                  ? "border-[var(--color-primary)] bg-blue-50"
                   : "border-gray-300 hover:border-gray-400 bg-gray-50",
                 (errors.payment_proof_file || apiErrors.payment_proof_file) && "border-red-500"
               )}
@@ -767,7 +767,7 @@ export function MakePayment({ showMemberId = true }: MakePaymentProps = {}) {
                 PDF, PNG, JPG up to 5MB
               </p>
               {watch('payment_proof_file') && (
-                <p className="text-sm text-[#3B60C9] mt-2 font-medium">
+                <p className="text-sm text-[var(--color-primary)] mt-2 font-medium">
                   Selected: {watch('payment_proof_file')?.name}
                 </p>
               )}
@@ -784,7 +784,7 @@ export function MakePayment({ showMemberId = true }: MakePaymentProps = {}) {
             <Button
               type="submit"
               disabled={loading}
-              className="w-full bg-[#3B60C9] hover:bg-[#3B60C9]/90 text-white h-12 text-base font-medium disabled:opacity-50"
+              className="w-full bg-[var(--color-primary)] hover:bg-[var(--color-primary)]/90 text-white h-12 text-base font-medium disabled:opacity-50"
             >
               {loading ? 'Submitting...' : 'Submit Payment'}
             </Button>

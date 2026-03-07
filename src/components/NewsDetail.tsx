@@ -41,7 +41,7 @@ export function NewsDetail() {
   if (!news) {
     return (
       <div className="w-full py-12 md:py-16 px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-[320px] flex flex-col items-center gap-6">
-        <h1 className="text-2xl font-semibold" style={{ color: '#021E40' }}>
+        <h1 className="text-2xl font-semibold" style={{ color: 'var(--color-dark-lighter)' }}>
           News not found
         </h1>
         <Link to="/news-events">
@@ -72,7 +72,7 @@ export function NewsDetail() {
         <Link
           to="/news-events"
           className="inline-flex items-center gap-2 text-sm font-medium mb-6 no-underline transition opacity-90 hover:opacity-100"
-          style={{ color: '#021E40' }}
+          style={{ color: 'var(--color-dark-lighter)' }}
         >
           <ArrowLeft className="w-4 h-4" />
           Back to News & Events

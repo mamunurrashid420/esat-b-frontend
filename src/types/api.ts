@@ -387,11 +387,51 @@ export interface JobListResponse {
   data: JobListing[];
 }
 
+/** Single hero slide from API (homepage slider). */
+export interface HeroSlideItem {
+  id: number;
+  image: string | null;
+  title: string;
+  subtitle: string | null;
+  description: string | null;
+  primary_button_label: string | null;
+  primary_button_url: string | null;
+  secondary_button_label: string | null;
+  secondary_button_url: string | null;
+  sort_order: number;
+  is_active?: boolean;
+}
+
+export interface HeroSlideListResponse {
+  data: HeroSlideItem[];
+}
+
+/** About section images (homepage About Us). */
+export interface AboutSectionData {
+  main_image: string | null;
+  overlapping_image: string | null;
+}
+
+/** Health section images (homepage Supporting Alumni Health & Wellness). */
+export interface HealthSectionData {
+  main_image: string | null;
+  overlapping_image: string | null;
+}
+
+/** Community section image (homepage Give Back / Life Long Learners). */
+export interface CommunitySectionData {
+  image: string | null;
+}
+
 /** Combined response for GET /api/homepage (all data needed for the public homepage). */
 export interface HomepageResponse {
   notices: NoticeListResponse;
   events: EventListResponse;
   gallery_photos: GalleryPhotoListResponse;
+  slider_slides?: HeroSlideListResponse;
+  about_section?: AboutSectionData;
+  health_section?: HealthSectionData;
+  community_section?: CommunitySectionData;
   jobs: JobListResponse;
   news: NewsListResponse;
   stats: HomepageStats;

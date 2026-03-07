@@ -10,19 +10,20 @@ This directory contains global styles extracted from the homepage design. The st
 
 ### Colors
 
-#### Primary Colors
-- `--color-primary`: #3B60C9 (Main brand blue)
-- `--color-primary-dark`: #003C66
-- `--color-primary-darker`: #000864
-- `--color-primary-darkest`: #103499
-- `--color-primary-accent`: #2348B2
-- `--color-primary-light`: #5481FF
-- `--color-primary-lighter`: #83A0F2
+#### Primary Colors (ESAT-B logo inspired)
+- `--color-primary`: #1E5AA7 (Blue from logo)
+- `--color-primary-dark`: #164A8A
+- `--color-primary-darker`: #0D3A6E
+- `--color-primary-darkest`: #0C2340
+- `--color-primary-accent`: #2563EB
+- `--color-primary-light`: #3B82F6
+- `--color-primary-lighter`: #93C5FD
+- `--color-gold` / `--color-gold-dark`: #D4A017 / #B8860B (Mustard from logo)
 
 #### Secondary Colors
-- `--color-secondary`: #7166F5 (Purple)
-- `--color-secondary-light`: #525FE1
-- `--color-secondary-lighter`: #D0CCFF
+- `--color-secondary`: #1E5AA7
+- `--color-secondary-light`: #3B82F6
+- `--color-secondary-lighter`: #BFDBFE
 
 #### Neutral Colors
 - `--color-white`: #FFFFFF
@@ -34,10 +35,10 @@ This directory contains global styles extracted from the homepage design. The st
 - `--color-gray-50` through `--color-gray-1600`: Various shades from light to dark
 
 #### Dark Backgrounds
-- `--color-dark`: #231F40
-- `--color-dark-light`: #161F37
-- `--color-dark-lighter`: #021E40
-- `--color-dark-lightest`: #211F38
+- `--color-dark`: #0C2340 (Navy)
+- `--color-dark-light`: #0F172A
+- `--color-dark-lighter`: #1E293B
+- `--color-dark-lightest`: #334155
 
 #### Accent Colors
 - `--color-success`: #2ACA55 (Green)
